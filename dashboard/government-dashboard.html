@@ -1,0 +1,930 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Government Dashboard | Jharkhand Societal Challenge Platform</title>
+
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+    <link rel="stylesheet" href="../css/dashboard.css">
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container nav-container">
+
+            <a href="../index.html" class="logo">
+                Jharkhand Challenge Platform
+            </a>
+
+            <button class="menu-toggle" aria-label="Toggle Menu">
+                ☰
+            </button>
+
+            <ul class="nav-links">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../pages/about.html">About</a></li>
+                <li><a href="../pages/challenges.html">Challenges</a></li>
+                <li><a href="../pages/universities.html">Universities</a></li>
+                <li><a href="../pages/industries.html">Industries</a></li>
+                <li><a href="../pages/collaborations.html">Collaborations</a></li>
+                <li>
+    <a href="../pages/login.html" class="logout-btn">
+        Logout
+    </a>
+</li>
+            </ul>
+
+        </div>
+    </nav>
+
+
+    <!-- Dashboard Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Government / Admin Dashboard</h1>
+            <p>
+                Manage societal problems, challenges, solutions and collaborations.
+            </p>
+        </div>
+    </section>
+
+
+    <!-- Dashboard -->
+    <section class="section">
+        <div class="container">
+
+            <div class="dashboard-grid">
+
+                <!-- Pending Problems -->
+                <div class="dashboard-card">
+                    <div class="dashboard-icon">📋</div>
+
+                    <h3>Pending Problems</h3>
+
+                    <p>
+                        Review and verify problems submitted by citizens.
+                    </p>
+
+                    <button class="btn btn-primary"
+                            onclick="showSection('pendingProblems')">
+                        View Pending Problems
+                    </button>
+                </div>
+
+
+                <!-- Approved Challenges -->
+                <div class="dashboard-card">
+                    <div class="dashboard-icon">✅</div>
+
+                    <h3>Approved Challenges</h3>
+
+                    <p>
+                        View problems that have been approved as public challenges.
+                    </p>
+
+                    <button class="btn btn-primary"
+                            onclick="showSection('approvedChallenges')">
+                        View Challenges
+                    </button>
+                </div>
+
+
+                <!-- Submitted Solutions -->
+                <div class="dashboard-card">
+                    <div class="dashboard-icon">💡</div>
+
+                    <h3>Submitted Solutions</h3>
+
+                    <p>
+                        View solutions submitted by universities and industries.
+                    </p>
+
+                    <button class="btn btn-primary"
+                            onclick="showSection('submittedSolutions')">
+                        View Solutions
+                    </button>
+                </div>
+
+
+                <!-- Review Solutions -->
+                <div class="dashboard-card">
+                    <div class="dashboard-icon">🔎</div>
+
+                    <h3>Review Solutions</h3>
+
+                    <p>
+                        Evaluate submitted solutions and select suitable partners.
+                    </p>
+
+                    <button class="btn btn-primary"
+                            onclick="showSection('reviewSolutions')">
+                        Review Solutions
+                    </button>
+                </div>
+
+
+                
+
+
+                <!-- Create Collaboration -->
+                <div class="dashboard-card">
+                    <div class="dashboard-icon">🤝</div>
+
+                    <h3>Create Collaboration</h3>
+
+                    <p>
+                        Select suitable university and industry partners for collaboration.
+                    </p>
+
+                    <button class="btn btn-primary"
+                            onclick="showSection('createCollaboration')">
+                        Create Collaboration
+                    </button>
+                </div>
+
+
+                <!-- Collaboration Management -->
+                <div class="dashboard-card">
+                    <div class="dashboard-icon">📊</div>
+
+                    <h3>Collaboration Management</h3>
+
+                    <p>
+                        Track and manage active government collaborations.
+                    </p>
+
+                    <button class="btn btn-primary"
+                            onclick="showSection('collaborationManagement')">
+                        Manage Collaborations
+                    </button>
+                </div>
+
+
+                <!-- Basic Analytics -->
+                <div class="dashboard-card">
+                    <div class="dashboard-icon">📈</div>
+
+                    <h3>Basic Analytics</h3>
+
+                    <p>
+                        View basic platform statistics and progress.
+                    </p>
+
+                    <button class="btn btn-primary"
+                            onclick="showSection('analytics')">
+                        View Analytics
+                    </button>
+                </div>
+
+            </div>
+
+
+            <!-- ========================= -->
+            <!-- PENDING PROBLEMS -->
+            <!-- ========================= -->
+
+            <div id="pendingProblems" class="dashboard-section">
+
+                <h2>Pending Problems</h2>
+
+                <div class="dashboard-list">
+
+                    <div class="dashboard-list-item">
+
+                        <div>
+                            <h3>Improving Rural Healthcare Access</h3>
+
+                            <p>
+                                Category: Healthcare
+                            </p>
+
+                            <span class="status-badge status-pending">
+                                Under Review
+                            </span>
+                        </div>
+
+                        <div>
+                            <button class="btn btn-primary"
+                                    onclick="approveProblem(this)">
+                                Approve
+                            </button>
+
+                            <button class="btn btn-secondary"
+                                    onclick="rejectProblem(this)">
+                                Reject
+                            </button>
+                        </div>
+
+                    </div>
+
+
+                    <div class="dashboard-list-item">
+
+                        <div>
+                            <h3>Digital Learning for Rural Students</h3>
+
+                            <p>
+                                Category: Education
+                            </p>
+
+                            <span class="status-badge status-pending">
+                                Under Review
+                            </span>
+                        </div>
+
+                        <div>
+                            <button class="btn btn-primary"
+                                    onclick="approveProblem(this)">
+                                Approve
+                            </button>
+
+                            <button class="btn btn-secondary"
+                                    onclick="rejectProblem(this)">
+                                Reject
+                            </button>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- ========================= -->
+            <!-- APPROVED CHALLENGES -->
+            <!-- ========================= -->
+
+            <div id="approvedChallenges" class="dashboard-section">
+
+                <h2>Approved Challenges</h2>
+
+                <div class="dashboard-list">
+
+                    <div class="dashboard-list-item">
+
+                        <div>
+                            <h3>Smart Waste Management</h3>
+
+                            <p>Category: Environment</p>
+
+                            <span class="status-badge status-approved">
+                                Open
+                            </span>
+                        </div>
+
+                       <button class="btn btn-primary"
+        onclick="viewChallenge('Smart Waste Management')">
+    View Challenge
+</button>
+                    </div>
+
+
+                    <div class="dashboard-list-item">
+
+                        <div>
+                            <h3>Rural Digital Learning</h3>
+
+                            <p>Category: Education</p>
+
+                            <span class="status-badge status-approved">
+                                Open
+                            </span>
+                        </div>
+
+                        <button class="btn btn-primary"
+                                onclick="viewChallenge('Rural Digital Learning')">
+                            View Challenge
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- ========================= -->
+            <!-- SUBMITTED SOLUTIONS -->
+            <!-- ========================= -->
+
+            <div id="submittedSolutions" class="dashboard-section">
+
+                <h2>Submitted Solutions</h2>
+
+                <div class="dashboard-list">
+
+                    <div class="dashboard-list-item">
+
+                        <div>
+                            <h3>Smart Waste Management Solution</h3>
+
+                            <p>
+                                Submitted by: NIT Jamshedpur
+                            </p>
+
+                            <span class="status-badge status-pending">
+                                Under Review
+                            </span>
+                        </div>
+
+                        <button class="btn btn-primary"
+                                onclick="showSection('reviewSolutions')">
+                            Review
+                        </button>
+
+                    </div>
+
+
+                    <div class="dashboard-list-item">
+
+                        <div>
+                            <h3>Digital Learning Platform</h3>
+
+                            <p>
+                                Submitted by: BIT Mesra
+                            </p>
+
+                            <span class="status-badge status-pending">
+                                Under Review
+                            </span>
+                        </div>
+
+                        <button class="btn btn-primary"
+                                onclick="showSection('reviewSolutions')">
+                            Review
+                        </button>
+
+                    </div>
+
+                    <div class="dashboard-list-item">
+
+    <div>
+        <h3>Smart Waste Technology Solution</h3>
+
+        <p>
+            Submitted by: Tata Consultancy Services
+        </p>
+
+        <p>
+            Type: Industry
+        </p>
+
+        <span class="status-badge status-pending">
+            Under Review
+        </span>
+    </div>
+
+    <button class="btn btn-primary"
+            onclick="showSection('reviewSolutions')">
+        Review
+    </button>
+
+</div>
+
+                </div>
+
+            </div>
+
+
+            <!-- ========================= -->
+            <!-- REVIEW SOLUTIONS -->
+            <!-- ========================= -->
+               <!-- ========================= -->
+<!-- REVIEW SOLUTIONS -->
+<!-- ========================= -->
+
+<div id="reviewSolutions" class="dashboard-section">
+
+    <h2>Review Solutions</h2>
+
+    <p>
+        Review solutions submitted by universities and industries
+        before selecting suitable partners for collaboration.
+    </p>
+
+    <div class="dashboard-list">
+
+        <!-- University Solution -->
+        <div class="dashboard-list-item">
+
+            <div>
+                <h3>Smart Waste Management Solution</h3>
+
+                <p>
+                    Submitted By: NIT Jamshedpur
+                </p>
+
+                <p>
+                    Type: University
+                </p>
+
+                <span class="status-badge status-pending">
+                    Submitted
+                </span>
+            </div>
+
+            <div>
+                <button class="btn btn-primary"
+                        onclick="approveSolution(this)">
+                    Shortlist
+                </button>
+
+                <button class="btn btn-secondary"
+                        onclick="rejectSolution(this)">
+                    Reject
+                </button>
+            </div>
+
+        </div>
+
+
+        <!-- Industry Solution -->
+        <div class="dashboard-list-item">
+
+            <div>
+                <h3>Smart Waste Technology Solution</h3>
+
+                <p>
+                    Submitted By: Tata Consultancy Services
+                </p>
+
+                <p>
+                    Type: Industry
+                </p>
+
+                <span class="status-badge status-pending">
+                    Submitted
+                </span>
+            </div>
+
+            <div>
+                <button class="btn btn-primary"
+                        onclick="approveSolution(this)">
+                    Shortlist
+                </button>
+
+                <button class="btn btn-secondary"
+                        onclick="rejectSolution(this)">
+                    Reject
+                </button>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+            
+
+                           
+
+
+            <!-- ========================= -->
+            <!-- APPROVE / REJECT -->
+            <!-- ========================= -->
+
+            
+                                  
+            
+
+
+            <!-- ========================= -->
+            <!-- CREATE COLLABORATION -->
+            <!-- ========================= -->
+
+            <div id="createCollaboration" class="dashboard-section">
+
+                <h2>Create Collaboration</h2>
+
+                <p>
+                    Select the university and industry partner for an approved challenge.
+                </p>
+
+                <form id="collaborationForm">
+
+                    <div class="form-group">
+
+                        <label for="challenge">
+                            Select Challenge
+                        </label>
+
+                        <select id="challenge" required>
+
+                            <option value="">
+                                Select Challenge
+                            </option>
+
+                            <option>
+                                Smart Waste Management
+                            </option>
+
+                            <option>
+                                Rural Digital Learning
+                            </option>
+
+                            <option>
+                                Rural Healthcare Access
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="university">
+                            Select University
+                        </label>
+
+                        <select id="university" required>
+
+                            <option value="">
+                                Select University
+                            </option>
+
+                            <option>
+                                NIT Jamshedpur
+                            </option>
+
+                            <option>
+                                BIT Mesra
+                            </option>
+
+                            <option>
+                                Ranchi University
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="industry">
+                            Select Industry
+                        </label>
+
+                        <select id="industry" required>
+
+                            <option value="">
+                                Select Industry
+                            </option>
+
+                            <option>
+                                Tata Consultancy Services
+                            </option>
+
+                            <option>
+                                Tech Solutions India
+                            </option>
+
+                            <option>
+                                GreenTech Solutions
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <button type="submit" class="btn btn-primary">
+                        Create Collaboration
+                    </button>
+
+                </form>
+
+            </div>
+
+
+            <!-- ========================= -->
+            <!-- COLLABORATION MANAGEMENT -->
+            <!-- ========================= -->
+
+            <div id="collaborationManagement" class="dashboard-section">
+
+                <h2>Collaboration Management</h2>
+
+                <div class="dashboard-list">
+
+                    <div class="dashboard-list-item">
+
+                        <div>
+
+                            <h3>Smart Waste Management</h3>
+
+                            <p>
+                                University: NIT Jamshedpur
+                            </p>
+
+                            <p>
+                                Industry: Tata Consultancy Services
+                            </p>
+
+                            <span class="status-badge status-active">
+                                Active
+                            </span>
+
+                        </div>
+
+                        <div>
+
+    <strong>Progress: 65%</strong>
+
+    <br><br>
+
+    <a
+        href="../pages/collaboration-workspace.html?collaboration=smart-waste"
+        class="btn btn-primary"
+    >
+        Open Workspace
+    </a>
+
+</div>
+
+                    </div>
+
+
+                    <div class="dashboard-list-item">
+
+                        <div>
+
+                            <h3>Rural Digital Learning</h3>
+
+                            <p>
+                                University: BIT Mesra
+                            </p>
+
+                            <p>
+                                Industry: Tech Solutions India
+                            </p>
+
+                            <span class="status-badge status-active">
+                                Active
+                            </span>
+
+                        </div>
+
+<div>
+
+    <strong>Progress: 45%</strong>
+
+    <br><br>
+
+    <a
+        href="../pages/collaboration-workspace.html?collaboration=rural-digital-learning"
+        class="btn btn-primary"
+    >
+        Open Workspace
+    </a>
+
+</div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- ========================= -->
+            <!-- BASIC ANALYTICS -->
+            <!-- ========================= -->
+
+            <div id="analytics" class="dashboard-section">
+
+                <h2>Basic Analytics</h2>
+
+                <div class="stats-grid">
+
+                    <div class="stat-card">
+                        <h3>24</h3>
+                        <p>Total Problems</p>
+                    </div>
+
+                    <div class="stat-card">
+                        <h3>15</h3>
+                        <p>Approved Challenges</p>
+                    </div>
+
+                    <div class="stat-card">
+                        <h3>32</h3>
+                        <p>Solutions Submitted</p>
+                    </div>
+
+                    <div class="stat-card">
+                        <h3>8</h3>
+                        <p>Active Collaborations</p>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- Footer -->
+    <footer class="footer">
+
+        <div class="container">
+
+            <p>
+                © 2026 Government of Jharkhand Societal Challenge Platform
+            </p>
+
+        </div>
+
+    </footer>
+
+
+    <!-- Dashboard JavaScript -->
+    <script>
+
+        function showSection(sectionId) {
+
+            const sections =
+                document.querySelectorAll(".dashboard-section");
+
+            sections.forEach(section => {
+                section.style.display = "none";
+            });
+
+            const selectedSection =
+                document.getElementById(sectionId);
+
+            if (selectedSection) {
+
+                selectedSection.style.display = "block";
+
+                selectedSection.scrollIntoView({
+                    behavior: "smooth",
+                    block: "start"
+                });
+            }
+        }
+
+
+        function approveProblem(button) {
+
+            const item = button.closest(".dashboard-list-item");
+
+            item.innerHTML = `
+                <div>
+                    <h3>Problem Approved</h3>
+                    <p>The problem has been approved as a public challenge.</p>
+                    <span class="status-badge status-approved">
+                        Approved
+                    </span>
+                </div>
+            `;
+
+            alert("Problem approved successfully.");
+        }
+
+
+        function rejectProblem(button) {
+
+            const item = button.closest(".dashboard-list-item");
+
+            item.innerHTML = `
+                <div>
+                    <h3>Problem Rejected</h3>
+                    <p>The submitted problem has been rejected.</p>
+                    <span class="status-badge status-rejected">
+                        Rejected
+                    </span>
+                </div>
+            `;
+
+            alert("Problem rejected.");
+        }
+
+
+        
+        function approveSolution(button) {
+
+    const item = button.closest(".dashboard-list-item");
+
+    item.innerHTML = `
+        <div>
+            <h3>Solution Shortlisted</h3>
+
+            <p>
+                The solution has been shortlisted for partner selection.
+            </p>
+
+            <span class="status-badge status-approved">
+                Shortlisted
+            </span>
+        </div>
+    `;
+
+    alert("Solution shortlisted successfully.");
+}
+
+
+        function rejectSolution(button) {
+
+            const item = button.closest(".dashboard-list-item");
+
+            item.innerHTML = `
+                <div>
+                    <h3>Solution Rejected</h3>
+                    <p>The submitted solution has been rejected.</p>
+                    <span class="status-badge status-rejected">
+                        Rejected
+                    </span>
+                </div>
+            `;
+
+            alert("Solution rejected.");
+        }
+
+
+        function decision(status) {
+
+            if (status === "approved") {
+                alert("Item approved successfully.");
+            } else {
+                alert("Item rejected.");
+            }
+
+        }
+
+
+        function viewChallenge(challenge) {
+
+    if (challenge === "Smart Waste Management") {
+
+        window.location.href =
+            "../pages/challenge-details.html?challenge=smart-waste";
+
+    } else if (challenge === "Rural Digital Learning") {
+
+        window.location.href =
+            "../pages/challenge-details.html?challenge=rural-learning";
+
+    }
+
+}
+
+
+        document
+            .getElementById("collaborationForm")
+            .addEventListener("submit", function(event) {
+
+                event.preventDefault();
+
+                const challenge =
+                    document.getElementById("challenge").value;
+
+                const university =
+                    document.getElementById("university").value;
+
+                const industry =
+                    document.getElementById("industry").value;
+
+                if (!challenge || !university || !industry) {
+
+                    alert("Please select all collaboration details.");
+
+                    return;
+                }
+
+                alert(
+                    "Collaboration created successfully!\n\n" +
+                    "Challenge: " + challenge +
+                    "\nUniversity: " + university +
+                    "\nIndustry: " + industry
+                );
+
+                this.reset();
+
+            });
+
+
+        // Hide dashboard sections initially
+        document
+            .querySelectorAll(".dashboard-section")
+            .forEach(section => {
+
+                section.style.display = "none";
+
+            });
+
+    </script>
+
+    <script src="../js/main.js"></script>
+    <script src="../js/dashboard.js"></script>
+
+</body>
+</html>

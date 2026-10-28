@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Citizen Dashboard | Societal Challenge Platform</title>
+
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+
+    <style>
+        .dashboard-page {
+            padding: 50px 0 70px;
+            background: #f5f7fb;
+            min-height: calc(100vh - 150px);
+        }
+
+        .dashboard-header {
+            margin-bottom: 35px;
+        }
+
+        .dashboard-header h1 {
+            font-size: 32px;
+            margin-bottom: 8px;
+        }
+
+        .dashboard-header p {
+            color: #64748b;
+        }
+
+        .citizen-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .citizen-card {
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 14px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.07);
+            transition: 0.3s ease;
+        }
+
+        .citizen-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .citizen-icon {
+            width: 55px;
+            height: 55px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 12px;
+            background: #eaf2ff;
+            color: #1557a6;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .citizen-card h3 {
+            margin-bottom: 10px;
+            font-size: 21px;
+        }
+
+        .citizen-card p {
+            color: #64748b;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .problem-list {
+            margin-top: 40px;
+        }
+
+        .problem-list h2 {
+            margin-bottom: 20px;
+        }
+
+        .problem-item {
+            background: #ffffff;
+            padding: 22px 25px;
+            border-radius: 12px;
+            margin-bottom: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+            box-shadow: 0 3px 12px rgba(0, 0, 0, 0.05);
+        }
+
+        .problem-item h4 {
+            margin-bottom: 6px;
+        }
+
+        .problem-item p {
+            margin: 0;
+            color: #64748b;
+            font-size: 14px;
+        }
+
+        .status {
+            padding: 7px 14px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 600;
+            white-space: nowrap;
+        }
+
+        .status-review {
+            background: #fff4d6;
+            color: #9a6700;
+        }
+
+        .status-approved {
+            background: #dcfce7;
+            color: #15803d;
+        }
+
+        @media (max-width: 900px) {
+            .citizen-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .citizen-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .dashboard-header h1 {
+                font-size: 27px;
+            }
+
+            .problem-item {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <header class="navbar">
+        <div class="container nav-container">
+
+            <a href="../index.html" class="logo">
+                Societal Challenge Platform
+            </a>
+
+            <button class="menu-toggle" aria-label="Toggle Menu">
+                ☰
+            </button>
+
+            <nav class="nav-links">
+                <a href="../index.html">Home</a>
+                <a href="../pages/about.html">About</a>
+                <a href="../pages/challenges.html">Challenges</a>
+                <a href="../pages/universities.html">Universities</a>
+                <a href="../pages/industries.html">Industries</a>
+                <a href="../pages/collaborations.html">Collaborations</a>
+                <a href="../pages/login.html" class="btn btn-outline logout-btn">
+    Logout
+</a>
+            </nav>
+
+        </div>
+    </header>
+
+
+    <!-- Citizen Dashboard -->
+    <main class="dashboard-page">
+
+        <div class="container">
+
+            <div class="dashboard-header">
+                <h1>Citizen Dashboard</h1>
+                <p>Manage your reported problems and check their status.</p>
+            </div>
+
+
+            <!-- ONLY 3 FINALIZED FEATURES -->
+            <div class="citizen-grid">
+
+                <!-- My Problems -->
+                <div class="citizen-card">
+                    <div class="citizen-icon">📋</div>
+
+                    <h3>My Problems</h3>
+
+                    <p>
+                        View the problems that you have submitted
+                        through the platform.
+                    </p>
+
+                    <a href="#my-problems" class="btn btn-primary">
+                        View My Problems
+                    </a>
+                </div>
+
+
+                <!-- Problem Status -->
+                <div class="citizen-card">
+                    <div class="citizen-icon">📊</div>
+
+                    <h3>Problem Status</h3>
+
+                    <p>
+                        Check whether your submitted problem is
+                        under review, approved, or solved.
+                    </p>
+
+                    <a href="#problem-status" class="btn btn-primary">
+                        Check Status
+                    </a>
+                </div>
+
+
+                <!-- Report New Problem -->
+                <div class="citizen-card">
+                    <div class="citizen-icon">➕</div>
+
+                    <h3>Report New Problem</h3>
+
+                    <p>
+                        Submit a new societal problem for
+                        government review.
+                    </p>
+
+                    <a href="../pages/report-problem.html"
+                       class="btn btn-primary">
+                        Report Problem
+                    </a>
+                </div>
+
+            </div>
+
+
+            <!-- My Problems / Problem Status -->
+            <section class="problem-list" id="my-problems">
+
+                <h2 id="problem-status">My Problems</h2>
+
+                <div class="problem-item">
+
+                    <div>
+                        <h4>Improving Rural Healthcare Access</h4>
+                        <p>
+                            Category: Healthcare
+                        </p>
+                    </div>
+
+                    <span class="status status-review">
+                        Under Review
+                    </span>
+
+                    <a
+    href="../pages/report-problem.html?view=submitted"
+    class="btn btn-outline"
+>
+    View Details
+</a>
+                </div>
+                
+
+
+                <div class="problem-item">
+
+                    <div>
+                        <h4>Digital Learning for Rural Students</h4>
+                        <p>
+                            Category: Education
+                        </p>
+                    </div>
+
+                    <span class="status status-approved">
+                        Approved
+                    </span>
+                    <a
+    href="../pages/report-problem.html?view=submitted"
+    class="btn btn-outline"
+>
+    View Details
+</a>
+
+                </div>
+
+            </section>
+
+        </div>
+
+    </main>
+
+
+    <!-- Footer -->
+    <footer class="footer">
+
+        <div class="container">
+
+            <p>
+                © 2026 Government of Jharkhand | Societal Challenge Platform
+            </p>
+
+        </div>
+
+    </footer>
+
+
+    <script src="../js/main.js"></script>
+    <script src="../js/dashboard.js"></script>
+
+</body>
+</html>

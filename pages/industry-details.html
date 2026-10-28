@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Industry Details | Societal Challenge Platform</title>
+
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+
+    <style>
+        .industry-profile {
+            padding: 50px 0;
+        }
+
+        .industry-header {
+            background: linear-gradient(135deg, #0b3d91, #1261c9);
+            color: white;
+            padding: 35px;
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            gap: 25px;
+            margin-bottom: 35px;
+        }
+
+        .industry-logo {
+            width: 90px;
+            height: 90px;
+            border-radius: 14px;
+            background: white;
+            color: #0b3d91;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+
+        .industry-header h1 {
+            margin-bottom: 8px;
+        }
+
+        .industry-header p {
+            margin-bottom: 10px;
+            opacity: 0.9;
+        }
+
+        .industry-type {
+            display: inline-block;
+            background: rgba(255,255,255,0.15);
+            padding: 7px 14px;
+            border-radius: 20px;
+            font-size: 14px;
+        }
+
+        .industry-layout {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 25px;
+        }
+
+        .industry-card {
+            background: white;
+            padding: 28px;
+            border-radius: 14px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.07);
+            margin-bottom: 25px;
+        }
+
+        .industry-card h2 {
+            color: #0b3d91;
+            margin-bottom: 15px;
+        }
+
+        .industry-card p {
+            line-height: 1.7;
+            color: #555;
+        }
+
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .tag {
+            background: #eef5ff;
+            color: #0b3d91;
+            padding: 9px 14px;
+            border-radius: 20px;
+            font-size: 14px;
+        }
+
+        .collaboration-item {
+            padding: 15px 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .collaboration-item:last-child {
+            border-bottom: none;
+        }
+
+        .collaboration-item h3 {
+            margin-bottom: 6px;
+            font-size: 17px;
+        }
+
+        .status {
+            display: inline-block;
+            padding: 5px 10px;
+            border-radius: 15px;
+            font-size: 12px;
+            background: #e8f7ee;
+            color: #16803c;
+        }
+
+        .info-row {
+            display: flex;
+            justify-content: space-between;
+            gap: 15px;
+            padding: 12px 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .info-row:last-child {
+            border-bottom: none;
+        }
+
+        .info-label {
+            font-weight: 600;
+            color: #333;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-bottom: 20px;
+            color: #0b3d91;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .back-link:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            .industry-header {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .industry-layout {
+                grid-template-columns: 1fr;
+            }
+
+            .industry-card {
+                padding: 22px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container nav-container">
+
+            <a href="../index.html" class="logo">
+                Societal Challenge Platform
+            </a>
+
+            <button class="menu-toggle">☰</button>
+
+            <div class="nav-links">
+                <a href="../index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="challenges.html">Challenges</a>
+                <a href="universities.html">Universities</a>
+                <a href="industries.html">Industries</a>
+                <a href="collaborations.html">Collaborations</a>
+                <a href="login.html" class="nav-login">Login</a>
+                <a href="register.html" class="btn btn-primary">Register</a>
+            </div>
+
+        </div>
+    </nav>
+
+
+    <!-- Industry Profile -->
+    <section class="industry-profile">
+
+        <div class="container">
+
+            <a href="industries.html" class="back-link">
+                ← Back to Industries
+            </a>
+
+            <!-- Header -->
+            <div class="industry-header">
+
+                <div class="industry-logo">
+                    TCS
+                </div>
+
+                <div>
+                    <h1>Tata Consultancy Services</h1>
+                    <p>Jamshedpur, Jharkhand</p>
+
+                    <span class="industry-type">
+                        Technology & IT
+                    </span>
+                </div>
+
+            </div>
+
+
+            <div class="industry-layout">
+
+                <!-- Main Content -->
+                <div>
+
+                    <!-- About -->
+                    <div class="industry-card">
+
+                        <h2>About</h2>
+
+                        <p>
+                            Tata Consultancy Services is a technology and
+                            consulting organization that provides digital
+                            solutions, software development and technology
+                            services. The organization can contribute
+                            technical expertise to societal challenges
+                            through collaborative innovation.
+                        </p>
+
+                    </div>
+
+
+                    <!-- Expertise -->
+                    <div class="industry-card">
+
+                        <h2>Expertise & Technologies</h2>
+
+                        <div class="tags">
+
+                            <span class="tag">Software Development</span>
+                            <span class="tag">Artificial Intelligence</span>
+                            <span class="tag">Cloud Computing</span>
+                            <span class="tag">Data Analytics</span>
+                            <span class="tag">Digital Solutions</span>
+                            <span class="tag">Web Technologies</span>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Collaborations -->
+                    <div class="industry-card">
+
+                        <h2>Collaborations</h2>
+
+                        <div class="collaboration-item">
+
+                            <h3>
+                                Digital Learning for Rural Students
+                            </h3>
+
+                            <span class="status">
+                                Active
+                            </span>
+
+                        </div>
+
+                        <div class="collaboration-item">
+
+                            <h3>
+                                Smart Waste Management
+                            </h3>
+
+                            <span class="status">
+                                Completed
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Basic Information -->
+                <div>
+
+                    <div class="industry-card">
+
+                        <h2>Basic Information</h2>
+
+                        <div class="info-row">
+                            <span class="info-label">Company</span>
+                            <span>Tata Consultancy Services</span>
+                        </div>
+
+                        <div class="info-row">
+                            <span class="info-label">Industry Type</span>
+                            <span>Technology & IT</span>
+                        </div>
+
+                        <div class="info-row">
+                            <span class="info-label">Location</span>
+                            <span>Jamshedpur</span>
+                        </div>
+
+                        <div class="info-row">
+                            <span class="info-label">Focus</span>
+                            <span>Technology & Innovation</span>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Footer -->
+    <footer class="footer">
+
+        <div class="container">
+
+            <p>
+                © 2026 Government of Jharkhand. All Rights Reserved.
+            </p>
+
+        </div>
+
+    </footer>
+
+
+    <script src="../js/main.js"></script>
+
+</body>
+</html>

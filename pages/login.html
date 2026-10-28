@@ -1,0 +1,290 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Login | Societal Challenge Platform</title>
+
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+
+    <style>
+        .login-section {
+            min-height: calc(100vh - 150px);
+            display: flex;
+            align-items: center;
+            padding: 50px 0;
+            background: #f7f9fc;
+        }
+
+        .login-container {
+            max-width: 480px;
+            margin: auto;
+        }
+
+        .login-card {
+            background: white;
+            padding: 40px;
+            border-radius: 16px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+        }
+
+        .login-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .login-header h1 {
+            color: #0b3d91;
+            margin-bottom: 10px;
+        }
+
+        .login-header p {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .login-form .form-group {
+            margin-bottom: 20px;
+        }
+
+        .login-form label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #333;
+        }
+
+        .login-form input,
+        .login-form select {
+            width: 100%;
+            padding: 13px 15px;
+            border: 1px solid #d8dee8;
+            border-radius: 8px;
+            font-size: 15px;
+            box-sizing: border-box;
+            background: white;
+        }
+
+        .login-form input:focus,
+        .login-form select:focus {
+            outline: none;
+            border-color: #0b3d91;
+        }
+
+        .login-btn {
+            width: 100%;
+            margin-top: 5px;
+        }
+
+        .register-link {
+            text-align: center;
+            margin-top: 25px;
+            color: #666;
+        }
+
+        .register-link a {
+            color: #0b3d91;
+            font-weight: 600;
+            text-decoration: none;
+        }
+
+        .register-link a:hover {
+            text-decoration: underline;
+        }
+
+        .demo-note {
+            margin-top: 20px;
+            padding: 12px 15px;
+            background: #eef5ff;
+            border-radius: 8px;
+            color: #555;
+            font-size: 13px;
+            line-height: 1.5;
+        }
+
+        @media (max-width: 600px) {
+            .login-card {
+                padding: 25px 20px;
+            }
+
+            .login-section {
+                padding: 35px 15px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container nav-container">
+
+            <a href="../index.html" class="logo">
+                Societal Challenge Platform
+            </a>
+
+            <button class="menu-toggle">☰</button>
+
+            <div class="nav-links">
+                <a href="../index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="challenges.html">Challenges</a>
+                <a href="universities.html">Universities</a>
+                <a href="industries.html">Industries</a>
+                <a href="collaborations.html">Collaborations</a>
+
+                <a href="login.html" class="nav-login">Login</a>
+                <a href="register.html" class="btn btn-primary">Register</a>
+            </div>
+
+        </div>
+    </nav>
+
+
+    <!-- Login -->
+    <section class="login-section">
+
+        <div class="container login-container">
+
+            <div class="login-card">
+
+                <div class="login-header">
+
+                    <h1>Welcome Back</h1>
+
+                    <p>
+                        Login to access your Societal Challenge Platform account.
+                    </p>
+
+                </div>
+
+
+                <form class="login-form" id="loginForm">
+
+                    <!-- Role -->
+                    <div class="form-group">
+
+                        <label for="role">
+                            Login As
+                        </label>
+
+                        <select id="role" required>
+
+                            <option value="">
+                                Select your role
+                            </option>
+
+                            <option value="citizen">
+                                Citizen
+                            </option>
+
+                            <option value="university">
+                                University
+                            </option>
+
+                            <option value="industry">
+                                Industry
+                            </option>
+
+                            <option value="government">
+                                Government / Admin
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <!-- Email -->
+                    <div class="form-group">
+
+                        <label for="email">
+                            Email Address
+                        </label>
+
+                        <input
+                            type="email"
+                            id="email"
+                            placeholder="Enter your email"
+                            required
+                        >
+
+                    </div>
+
+
+                    <!-- Password -->
+                    <div class="form-group">
+
+                        <label for="password">
+                            Password
+                        </label>
+
+                        <input
+                            type="password"
+                            id="password"
+                            placeholder="Enter your password"
+                            required
+                        >
+
+                    </div>
+
+
+                    <button
+                        type="submit"
+                        class="btn btn-primary login-btn">
+                        Login
+                    </button>
+
+                </form>
+
+
+                <div class="register-link">
+
+                    Don't have an account?
+                    <a href="register.html">
+                        Create an account
+                    </a>
+
+                </div>
+
+
+                <div class="demo-note">
+
+                    <strong>Demo:</strong>
+                    Role-based authentication will be connected
+                    with the backend and database later.
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Footer -->
+    <footer class="footer">
+
+        <div class="container">
+
+            <p>
+                © 2026 Government of Jharkhand. All Rights Reserved.
+            </p>
+
+        </div>
+
+    </footer>
+
+
+    <script src="../js/main.js"></script>
+    <script src="../js/api.js"></script>
+    <script src="../js/auth.js"></script>
+
+</body>
+</html>
+

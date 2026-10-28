@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Industry Dashboard | Societal Challenge Platform</title>
+
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+
+    <style>
+        .dashboard-page {
+            padding: 50px 0 70px;
+            background: #f5f7fb;
+            min-height: calc(100vh - 150px);
+        }
+
+        .dashboard-header {
+            margin-bottom: 35px;
+        }
+
+        .dashboard-header h1 {
+            font-size: 32px;
+            margin-bottom: 8px;
+        }
+
+        .dashboard-header p {
+            color: #64748b;
+        }
+
+        .industry-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+        }
+
+        .industry-card {
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 14px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.07);
+            transition: 0.3s ease;
+        }
+
+        .industry-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .dashboard-icon {
+            width: 55px;
+            height: 55px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 12px;
+            background: #eaf2ff;
+            color: #1557a6;
+            font-size: 24px;
+            margin-bottom: 18px;
+        }
+
+        .industry-card h3 {
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+
+        .industry-card p {
+            color: #64748b;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .dashboard-section {
+            margin-top: 45px;
+        }
+
+        .dashboard-section h2 {
+            margin-bottom: 20px;
+        }
+
+        .solution-item,
+        .invitation-item,
+        .collaboration-item {
+            background: #ffffff;
+            padding: 22px 24px;
+            border-radius: 12px;
+            margin-bottom: 15px;
+            box-shadow: 0 3px 12px rgba(0, 0, 0, 0.05);
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .solution-item h4,
+        .invitation-item h4,
+        .collaboration-item h4 {
+            margin-bottom: 7px;
+        }
+
+        .solution-item p,
+        .invitation-item p,
+        .collaboration-item p {
+            margin: 0;
+            color: #64748b;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        .status {
+            padding: 7px 14px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 600;
+            white-space: nowrap;
+        }
+
+        .status-review {
+            background: #fff4d6;
+            color: #9a6700;
+        }
+
+        .status-shortlisted {
+            background: #e0f2fe;
+            color: #0369a1;
+        }
+
+        .status-active {
+            background: #dcfce7;
+            color: #15803d;
+        }
+
+        .invitation-item {
+            border-left: 4px solid #1557a6;
+        }
+
+        .invitation-actions {
+            display: flex;
+            gap: 10px;
+            flex-shrink: 0;
+        }
+
+        .btn-reject {
+            background: #ffffff;
+            color: #b91c1c;
+            border: 1px solid #ef4444;
+        }
+
+        .btn-reject:hover {
+            background: #fef2f2;
+        }
+
+        @media (max-width: 700px) {
+            .industry-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .dashboard-header h1 {
+                font-size: 27px;
+            }
+
+            .solution-item,
+            .invitation-item,
+            .collaboration-item {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .invitation-actions {
+                width: 100%;
+            }
+
+            .invitation-actions button {
+                flex: 1;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <header class="navbar">
+
+        <div class="container nav-container">
+
+            <a href="../index.html" class="logo">
+                Societal Challenge Platform
+            </a>
+
+            <button class="menu-toggle" aria-label="Toggle Menu">
+                ☰
+            </button>
+
+            <nav class="nav-links">
+
+                <a href="../index.html">Home</a>
+
+                <a href="../pages/about.html">About</a>
+
+                <a href="../pages/challenges.html">Challenges</a>
+
+                <a href="../pages/universities.html">
+                    Universities
+                </a>
+
+                <a href="../pages/industries.html">
+                    Industries
+                </a>
+
+                <a href="../pages/collaborations.html">
+                    Collaborations
+                </a>
+
+                <a href="../pages/login.html"
+   class="btn btn-outline logout-btn">
+    Logout
+</a>
+
+            </nav>
+
+        </div>
+
+    </header>
+
+
+    <!-- Industry Dashboard -->
+    <main class="dashboard-page">
+
+        <div class="container">
+
+            <!-- Dashboard Header -->
+            <div class="dashboard-header">
+
+                <h1>Industry Dashboard</h1>
+
+                <p>
+                    Explore challenges, manage solutions
+                    and collaborations.
+                </p>
+
+            </div>
+
+
+            <!-- EXACTLY 4 FINALIZED FEATURES -->
+            <div class="industry-grid">
+
+                <!-- Available Challenges -->
+                <div class="industry-card">
+
+                    <div class="dashboard-icon">
+                        🔍
+                    </div>
+
+                    <h3>Available Challenges</h3>
+
+                    <p>
+                        Explore societal challenges that are
+                        open for industry solutions.
+                    </p>
+
+                    <a href="../pages/challenges.html"
+                       class="btn btn-primary">
+                        Explore Challenges
+                    </a>
+
+                </div>
+
+
+                <!-- My Solutions -->
+                <div class="industry-card">
+
+                    <div class="dashboard-icon">
+                        💡
+                    </div>
+
+                    <h3>My Solutions</h3>
+
+                    <p>
+                        View solutions submitted by your
+                        industry.
+                    </p>
+
+                    <a href="#my-solutions"
+                       class="btn btn-primary">
+                        View Solutions
+                    </a>
+
+                </div>
+
+
+                <!-- Solution Status -->
+                <div class="industry-card">
+
+                    <div class="dashboard-icon">
+                        📊
+                    </div>
+
+                    <h3>Solution Status</h3>
+
+                    <p>
+                        Check the current status of your
+                        submitted solutions.
+                    </p>
+
+                    <a href="#solution-status"
+                       class="btn btn-primary">
+                        Check Status
+                    </a>
+
+                </div>
+
+
+                <!-- My Collaborations -->
+                <div class="industry-card">
+
+                    <div class="dashboard-icon">
+                        🤝
+                    </div>
+
+                    <h3>My Collaborations</h3>
+
+                    <p>
+                        Manage collaboration invitations
+                        and active collaborations.
+                    </p>
+
+                    <a href="#my-collaborations"
+                       class="btn btn-primary">
+                        View Collaborations
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- My Solutions / Solution Status -->
+            <section class="dashboard-section"
+                     id="my-solutions">
+
+                <h2 id="solution-status">
+                    My Solutions
+                </h2>
+
+
+                <!-- Solution 1 -->
+                <div class="solution-item">
+
+                    <div>
+
+                        <h4>
+                            Smart Waste Management Solution
+                        </h4>
+
+                        <p>
+                            Technology-based waste collection
+                            and monitoring solution.
+                        </p>
+
+                    </div>
+
+                    <span class="status status-shortlisted">
+                        Shortlisted
+                    </span>
+                    <a
+    href="../pages/solution-submission.html?view=solution"
+    class="btn btn-outline"
+>
+    View Details
+</a>
+
+                </div>
+
+
+                <!-- Solution 2 -->
+                <div class="solution-item">
+
+                    <div>
+
+                        <h4>
+                            Rural Digital Learning Platform
+                        </h4>
+
+                        <p>
+                            Digital technology solution for
+                            rural education.
+                        </p>
+
+                    </div>
+
+                    <span class="status status-review">
+                        Under Review
+                    </span>
+                    <a
+    href="../pages/solution-submission.html?view=solution"
+    class="btn btn-outline"
+>
+    View Details
+</a>
+
+                </div>
+
+            </section>
+
+
+            <!-- My Collaborations -->
+            <section class="dashboard-section"
+                     id="my-collaborations">
+
+                <h2>
+                    My Collaborations
+                </h2>
+
+
+                <!-- Collaboration Invitation -->
+                <div class="invitation-item">
+
+                    <div>
+
+                        <h4>
+                            Collaboration Invitation
+                        </h4>
+
+                        <p>
+                            <strong>
+                                Smart Waste Management
+                            </strong>
+                        </p>
+
+                        <p>
+                            Government:
+                            Government of Jharkhand
+                            <br>
+
+                            University:
+                            NIT Jamshedpur
+                        </p>
+
+                    </div>
+
+
+                    <div class="invitation-actions">
+
+                        <button
+                            class="btn btn-primary"
+                            onclick="acceptCollaboration(this)">
+                            Accept
+                        </button>
+
+                        <button
+                            class="btn btn-reject"
+                            onclick="rejectCollaboration(this)">
+                            Reject
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Active Collaboration -->
+                <div class="collaboration-item">
+
+                    <div>
+
+                        <h4>
+                            Rural Digital Learning
+                        </h4>
+
+                        <p>
+                            Government of Jharkhand +
+                            BIT Mesra +
+                            Tech Solutions India
+                        </p>
+
+                    </div>
+
+                    <span class="status status-active">
+                        Active
+                    </span>
+                    <a
+    href="../pages/collaboration-workspace.html?collaboration=rural-digital-learning"
+    class="btn btn-primary"
+>
+    Open Workspace
+</a>
+
+                </div>
+
+            </section>
+
+        </div>
+
+    </main>
+
+
+    <!-- Footer -->
+    <footer class="footer">
+
+        <div class="container">
+
+            <p>
+                © 2026 Government of Jharkhand |
+                Societal Challenge Platform
+            </p>
+
+        </div>
+
+    </footer>
+
+
+    <script src="../js/main.js"></script>
+
+
+    <script>
+
+        // Accept Collaboration
+        function acceptCollaboration(button) {
+
+            const invitation =
+                button.closest(".invitation-item");
+
+            invitation.innerHTML = `
+                <div>
+
+                    <h4>
+                        Smart Waste Management
+                    </h4>
+
+                    <p>
+                        Government of Jharkhand +
+                        NIT Jamshedpur +
+                        Tata Consultancy Services
+                    </p>
+
+                </div>
+
+                <span class="status status-active">
+                    Active
+                </span>
+            `;
+
+            alert(
+                "Collaboration accepted successfully."
+            );
+        }
+
+
+        // Reject Collaboration
+        function rejectCollaboration(button) {
+
+            const invitation =
+                button.closest(".invitation-item");
+
+            invitation.remove();
+
+            alert(
+                "Collaboration invitation rejected."
+            );
+        }
+
+    </script>
+    <script src="../js/dashboard.js"></script>
+
+</body>
+</html>

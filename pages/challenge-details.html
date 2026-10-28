@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Challenge Details | Societal Challenge Platform</title>
+
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+
+    <style>
+
+.supporting-evidence {
+    margin-top: 15px;
+}
+
+.photo-preview-area {
+    width: 100%;
+    min-height: 180px;
+    border: 1px dashed #cbd5e1;
+    border-radius: 12px;
+    background: #f8fafc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.photo-placeholder {
+    text-align: center;
+    color: #667085;
+    line-height: 1.8;
+}
+
+.evidence-actions {
+    display: flex;
+    gap: 12px;
+    margin-top: 15px;
+}
+
+</style>
+</head>
+
+<body>
+
+    <!-- =========================
+         NAVBAR
+    ========================== -->
+
+    <header class="navbar">
+
+        <div class="container navbar-container">
+
+            <a href="../index.html" class="logo">
+                <div class="logo-icon">JH</div>
+                <span>Societal Challenge Platform</span>
+            </a>
+
+            <nav class="nav-links">
+
+                <a href="../index.html">Home</a>
+
+                <a href="about.html">About</a>
+
+                <a href="challenges.html" class="active">Challenges</a>
+
+                <a href="universities.html">Universities</a>
+
+                <a href="industries.html">Industries</a>
+
+                <a href="collaborations.html">Collaborations</a>
+
+            </nav>
+
+            <div class="nav-actions">
+
+                <a href="login.html" class="btn btn-outline">
+                    Login
+                </a>
+
+                <a href="register.html" class="btn btn-primary">
+                    Register
+                </a>
+
+            </div>
+
+            <button class="menu-toggle"
+                    aria-label="Open Menu"
+                    aria-expanded="false">
+                ☰
+            </button>
+
+        </div>
+
+    </header>
+
+
+    <!-- =========================
+         PAGE HEADER
+    ========================== -->
+
+    <section class="page-header">
+
+        <div class="container">
+
+            <h1>Challenge Details</h1>
+
+            <p>
+                Explore the problem and contribute an innovative solution.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         CHALLENGE DETAILS
+    ========================== -->
+
+    <!-- =========================
+     CHALLENGE DETAILS
+========================== -->
+
+<section class="section">
+
+    <div class="container">
+
+        <div class="card">
+
+            <!-- Category & Status -->
+
+            <div class="challenge-meta">
+
+                <span class="badge badge-category" id="challengeCategory">
+                    Healthcare
+                </span>
+
+                <span class="badge badge-open" id="challengeStatus">
+                    Open
+                </span>
+
+            </div>
+
+
+            <!-- Title -->
+
+            <h2 id="challengeTitle">
+                Improving Rural Healthcare Access
+            </h2>
+
+
+            <!-- Location -->
+
+            <p class="text-muted" id="challengeLocation">
+                📍 District: Ranchi, Jharkhand
+            </p>
+
+
+            <!-- Department -->
+
+            <p class="text-muted" id="challengeDepartment">
+                🏛 Government Department:
+                Department of Health, Medical Education & Family Welfare
+            </p>
+
+
+            <hr style="margin: 25px 0; border: 0; border-top: 1px solid var(--border);">
+
+
+            <!-- Problem Description -->
+
+            <h3>Problem Description</h3>
+
+            <p id="challengeDescription">
+                Rural communities often face difficulties in accessing
+                quality healthcare services due to limited medical
+                facilities, shortage of healthcare professionals and
+                geographical barriers.
+            </p>
+
+            <br>
+
+
+            <!-- Expected Outcome -->
+
+            <h3>Expected Outcome</h3>
+
+            <p id="challengeOutcome">
+                Develop an innovative and practical solution that can
+                improve access to healthcare services for people living
+                in rural areas.
+            </p>
+
+            <br>
+
+            <!-- CURRENT SITUATION -->
+
+<h3>Current Situation</h3>
+
+<p id="challengeCurrentSituation">
+    Rural communities currently face limited access to healthcare
+    facilities, medical professionals and essential healthcare services.
+</p>
+
+<br>
+
+
+<!-- PROBLEM PRIORITY -->
+
+<h3>Problem Priority</h3>
+
+<p id="challengePriority">
+    High
+</p>
+
+<br>
+
+
+<!-- SUPPORTING EVIDENCE -->
+
+<h3>Supporting Evidence</h3>
+
+<div class="supporting-evidence">
+
+    <div class="photo-preview-area">
+
+        <div class="photo-placeholder">
+            📷
+            <br>
+            Supporting Photo Preview
+        </div>
+
+    </div>
+
+    <div class="evidence-actions">
+
+        <button
+            type="button"
+            class="btn btn-outline"
+            onclick="viewEvidence()"
+        >
+            View
+        </button>
+
+        <a
+            href="#"
+            id="downloadEvidence"
+            class="btn btn-outline"
+            download="supporting-evidence.txt"
+        >
+            Download
+        </a>
+
+    </div>
+
+</div>
+
+<br>
+
+
+            <!-- Challenge Status -->
+
+            <h3>Challenge Status</h3>
+
+            <p id="challengeStatusText">
+                This challenge is currently open for solution
+                submissions from eligible universities and industries.
+            </p>
+
+            <br>
+
+
+           <!-- Submit Solution -->
+
+<a href="solution-submission.html"
+   class="btn btn-primary"
+   id="submitSolutionBtn">
+
+    Submit a Solution
+
+</a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+                
+
+                
+               
+
+
+
+    <!-- =========================
+         FOOTER
+    ========================== -->
+
+    <footer class="footer">
+
+        <div class="container">
+
+            <div class="footer-grid">
+
+                <!-- About -->
+
+                <div>
+
+                    <h3>
+                        Societal Challenge Platform
+                    </h3>
+
+                    <p>
+                        A Government of Jharkhand initiative connecting
+                        citizens, government, universities and industries
+                        to solve societal challenges collaboratively.
+                    </p>
+
+                </div>
+
+
+                <!-- Quick Links -->
+
+                <div>
+
+                    <h4>Quick Links</h4>
+
+                    <div class="footer-links">
+
+                        <a href="../index.html">
+                            Home
+                        </a>
+
+                        <a href="about.html">
+                            About
+                        </a>
+
+                        <a href="challenges.html">
+                            Challenges
+                        </a>
+
+                        <a href="universities.html">
+                            Universities
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Partners -->
+
+                <div>
+
+                    <h4>Partners</h4>
+
+                    <div class="footer-links">
+
+                        <a href="industries.html">
+                            Industries
+                        </a>
+
+                        <a href="collaborations.html">
+                            Collaborations
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Important -->
+
+                <div>
+
+                    <h4>Important</h4>
+
+                    <div class="footer-links">
+
+                        <a href="#">
+                            Privacy Policy
+                        </a>
+
+                        <a href="#">
+                            Terms & Conditions
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="footer-bottom">
+
+                © 2026 Government of Jharkhand.
+                All Rights Reserved.
+
+            </div>
+
+        </div>
+
+    </footer>
+
+
+    <!-- JavaScript -->
+    
+    <script>
+
+    const params = new URLSearchParams(window.location.search);
+    const challenge = params.get("challenge");
+
+
+    const challenges = {
+
+        "smart-waste": {
+
+            title: "Smart Waste Management",
+
+            category: "Environment",
+
+            status: "Open",
+
+            location: "📍 District: Ranchi, Jharkhand",
+
+            department:
+                "🏛 Government Department: Department of Urban Development",
+
+            description:
+                "Urban and rural areas face challenges in proper waste collection, segregation and disposal. Lack of efficient waste management systems can create environmental and public health problems.",
+
+            outcome:
+                "Develop a smart and sustainable waste management solution that improves waste collection, segregation, recycling and disposal.",
+
+            statusText:
+                "This challenge is currently open for solution submissions from eligible universities and industries."
+
+                currentSituation:
+    "Urban and rural areas currently face difficulties in waste collection, segregation and disposal.",
+
+priority:
+    "High",
+
+evidence:
+    "Supporting evidence for Smart Waste Management challenge."
+
+        },
+
+
+        "rural-learning": {
+
+            title: "Rural Digital Learning",
+
+            category: "Education",
+
+            status: "Open",
+
+            location: "📍 District: Dumka, Jharkhand",
+
+            department:
+                "🏛 Government Department: Department of School Education & Literacy",
+
+            description:
+                "Students in rural areas often have limited access to digital learning resources, quality educational content and technology-enabled learning facilities.",
+
+            outcome:
+                "Develop an accessible digital learning solution that improves educational resources and learning opportunities for students in rural areas.",
+
+            statusText:
+                "This challenge is currently open for solution submissions from eligible universities and industries."
+                currentSituation:
+    "Students in rural areas currently have limited access to digital learning resources and technology-enabled education.",
+
+priority:
+    "Medium",
+
+evidence:
+    "Supporting evidence for Rural Digital Learning challenge."
+
+        }
+
+    };
+
+
+    if (challenge && challenges[challenge]) {
+
+        const data = challenges[challenge];
+
+        document.getElementById("challengeTitle").textContent =
+            data.title;
+
+        document.getElementById("challengeCategory").textContent =
+            data.category;
+
+        document.getElementById("challengeStatus").textContent =
+            data.status;
+
+        document.getElementById("challengeLocation").textContent =
+            data.location;
+
+        document.getElementById("challengeDepartment").textContent =
+            data.department;
+
+        document.getElementById("challengeDescription").textContent =
+            data.description;
+
+        document.getElementById("challengeOutcome").textContent =
+            data.outcome;
+
+            document.getElementById("challengeCurrentSituation").textContent =
+    data.currentSituation;
+
+document.getElementById("challengePriority").textContent =
+    data.priority;
+
+document.getElementById("downloadEvidence").href =
+    "data:text/plain;charset=utf-8," +
+    encodeURIComponent(data.evidence);
+
+        document.getElementById("challengeStatusText").textContent =
+            data.statusText;
+
+        document.title =
+            data.title + " | Societal Challenge Platform";
+
+    }
+
+</script>
+
+<script src="../js/main.js"></script>
+    <script src="../js/main.js"></script>
+
+    <script>
+
+function viewEvidence() {
+
+    const params =
+        new URLSearchParams(window.location.search);
+
+    const challenge =
+        params.get("challenge");
+
+    const challenges = {
+
+        "rural-healthcare":
+            "Supporting evidence for Improving Rural Healthcare Access.",
+
+        "smart-waste":
+            "Supporting evidence for Smart Waste Management.",
+
+        "rural-learning":
+            "Supporting evidence for Rural Digital Learning."
+
+    };
+
+    if (challenges[challenge]) {
+
+        alert(challenges[challenge]);
+
+    }
+
+}
+
+</script>
+
+</body>
+
+</html>

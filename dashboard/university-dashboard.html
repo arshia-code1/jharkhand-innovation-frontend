@@ -1,0 +1,798 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>University Dashboard | Societal Challenge Platform</title>
+
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+
+    <style>
+        .dashboard-page {
+            padding: 50px 0 70px;
+            background: #f5f7fb;
+            min-height: calc(100vh - 150px);
+        }
+
+        .dashboard-header {
+            margin-bottom: 35px;
+        }
+
+        .dashboard-header h1 {
+            font-size: 32px;
+            margin-bottom: 8px;
+        }
+
+        .dashboard-header p {
+            color: #64748b;
+        }
+
+        .university-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .university-card {
+            background: #ffffff;
+            padding: 28px;
+            border-radius: 14px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.07);
+            transition: 0.3s ease;
+        }
+
+        .university-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .dashboard-icon {
+            width: 55px;
+            height: 55px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 12px;
+            background: #eaf2ff;
+            color: #1557a6;
+            font-size: 24px;
+            margin-bottom: 18px;
+        }
+
+        .university-card h3 {
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+
+        .university-card p {
+            color: #64748b;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .dashboard-section {
+            margin-top: 45px;
+        }
+
+        .dashboard-section h2 {
+            margin-bottom: 20px;
+        }
+
+        .solution-item,
+        .collaboration-item,
+        .invitation-item,
+        .team-member {
+            background: #ffffff;
+            padding: 22px 24px;
+            border-radius: 12px;
+            margin-bottom: 15px;
+            box-shadow: 0 3px 12px rgba(0, 0, 0, 0.05);
+        }
+
+        .solution-item,
+        .collaboration-item,
+        .invitation-item,
+        .team-member {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .solution-item h4,
+        .collaboration-item h4,
+        .invitation-item h4,
+        .team-member h4 {
+            margin-bottom: 7px;
+        }
+
+        .solution-item p,
+        .collaboration-item p,
+        .invitation-item p,
+        .team-member p {
+            margin: 0;
+            color: #64748b;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        .status {
+            padding: 7px 14px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 600;
+            white-space: nowrap;
+        }
+
+        .status-review {
+            background: #fff4d6;
+            color: #9a6700;
+        }
+
+        .status-shortlisted {
+            background: #e0f2fe;
+            color: #0369a1;
+        }
+
+        .status-active {
+            background: #dcfce7;
+            color: #15803d;
+        }
+
+        .invitation-item {
+            border-left: 4px solid #1557a6;
+        }
+
+        .invitation-actions {
+            display: flex;
+            gap: 10px;
+            flex-shrink: 0;
+        }
+
+        .btn-reject {
+            background: #ffffff;
+            color: #b91c1c;
+            border: 1px solid #ef4444;
+        }
+
+        .btn-reject:hover {
+            background: #fef2f2;
+        }
+
+        .team-list {
+            margin-bottom: 20px;
+        }
+
+        .team-role {
+            font-size: 13px;
+            font-weight: 600;
+            color: #1557a6;
+            white-space: nowrap;
+        }
+
+        .add-member-box {
+            background: #ffffff;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 3px 12px rgba(0, 0, 0, 0.05);
+        }
+
+        .add-member-box h3 {
+            margin-bottom: 20px;
+        }
+
+        .team-form {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr auto;
+            gap: 15px;
+            align-items: end;
+        }
+
+        .team-form .form-group {
+            margin-bottom: 0;
+        }
+
+        .team-form label {
+            display: block;
+            margin-bottom: 7px;
+            font-weight: 600;
+            font-size: 14px;
+        }
+
+        .team-form input,
+        .team-form select {
+            width: 100%;
+            padding: 11px 12px;
+            border: 1px solid #d9e0ea;
+            border-radius: 8px;
+            font-size: 14px;
+            outline: none;
+        }
+
+        .team-form input:focus,
+        .team-form select:focus {
+            border-color: #1557a6;
+        }
+
+        @media (max-width: 1000px) {
+            .university-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .team-form {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .university-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .dashboard-header h1 {
+                font-size: 27px;
+            }
+
+            .solution-item,
+            .collaboration-item,
+            .invitation-item,
+            .team-member {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .invitation-actions {
+                width: 100%;
+            }
+
+            .invitation-actions button {
+                flex: 1;
+            }
+
+            .team-form {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <header class="navbar">
+        <div class="container nav-container">
+
+            <a href="../index.html" class="logo">
+                Societal Challenge Platform
+            </a>
+
+            <button class="menu-toggle" aria-label="Toggle Menu">
+                ☰
+            </button>
+
+            <nav class="nav-links">
+                <a href="../index.html">Home</a>
+                <a href="../pages/about.html">About</a>
+                <a href="../pages/challenges.html">Challenges</a>
+                <a href="../pages/universities.html">Universities</a>
+                <a href="../pages/industries.html">Industries</a>
+                <a href="../pages/collaborations.html">Collaborations</a>
+                <a href="../pages/login.html" class="btn btn-outline logout-btn">
+    Logout
+</a>
+            </nav>
+
+        </div>
+    </header>
+
+
+    <!-- University Dashboard -->
+    <main class="dashboard-page">
+
+        <div class="container">
+
+            <!-- Header -->
+            <div class="dashboard-header">
+                <h1>University Dashboard</h1>
+
+                <p>
+                    Explore challenges, manage solutions,
+                    collaborations and project teams.
+                </p>
+            </div>
+
+
+            <!-- Main Features -->
+            <div class="university-grid">
+
+                <!-- Available Challenges -->
+                <div class="university-card">
+
+                    <div class="dashboard-icon">🔍</div>
+
+                    <h3>Available Challenges</h3>
+
+                    <p>
+                        Explore societal challenges that are
+                        open for university solutions.
+                    </p>
+
+                    <a href="../pages/challenges.html"
+                       class="btn btn-primary">
+                        Explore Challenges
+                    </a>
+
+                </div>
+
+
+                <!-- My Solutions -->
+                <div class="university-card">
+
+                    <div class="dashboard-icon">💡</div>
+
+                    <h3>My Solutions</h3>
+
+                    <p>
+                        View solutions submitted by your
+                        university.
+                    </p>
+
+                    <a href="#my-solutions"
+                       class="btn btn-primary">
+                        View Solutions
+                    </a>
+
+                </div>
+
+
+                <!-- Solution Status -->
+                <div class="university-card">
+
+                    <div class="dashboard-icon">📊</div>
+
+                    <h3>Solution Status</h3>
+
+                    <p>
+                        Check the current status of your
+                        submitted solutions.
+                    </p>
+
+                    <a href="#solution-status"
+                       class="btn btn-primary">
+                        Check Status
+                    </a>
+
+                </div>
+
+
+                <!-- My Collaborations -->
+                <div class="university-card">
+
+                    <div class="dashboard-icon">🤝</div>
+
+                    <h3>My Collaborations</h3>
+
+                    <p>
+                        Manage collaboration invitations and
+                        active collaborations.
+                    </p>
+
+                    <a href="#my-collaborations"
+                       class="btn btn-primary">
+                        View Collaborations
+                    </a>
+
+                </div>
+
+
+                <!-- Project Team -->
+                <div class="university-card">
+
+                    <div class="dashboard-icon">👥</div>
+
+                    <h3>Project Team</h3>
+
+                    <p>
+                        Manage students and faculty members
+                        involved in an active collaboration.
+                    </p>
+
+                    <a href="#project-team"
+                       class="btn btn-primary">
+                        View Team
+                    </a>
+
+                </div>
+
+
+                <!-- Add Team Members -->
+                <div class="university-card">
+
+                    <div class="dashboard-icon">➕</div>
+
+                    <h3>Add Team Members</h3>
+
+                    <p>
+                        Add students or faculty mentors to
+                        your project team.
+                    </p>
+
+                    <a href="#add-team-member"
+                       class="btn btn-primary">
+                        Add Member
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- My Solutions -->
+            <section class="dashboard-section" id="my-solutions">
+
+                <h2 id="solution-status">My Solutions</h2>
+
+                <div class="solution-item">
+
+                    <div>
+                        <h4>Smart Waste Management Solution</h4>
+
+                        <p>
+                            Proposed solution for smart waste
+                            collection and monitoring.
+                        </p>
+                    </div>
+
+                    <span class="status status-shortlisted">
+                        Shortlisted
+                    </span>
+                    <a
+    href="../pages/solution-submission.html?view=solution"
+    class="btn btn-outline"
+>
+    View Details
+</a>
+
+                </div>
+
+
+                <div class="solution-item">
+
+                    <div>
+                        <h4>Rural Digital Learning Platform</h4>
+
+                        <p>
+                            Digital learning approach for
+                            rural students.
+                        </p>
+                    </div>
+
+                    <span class="status status-review">
+                        Under Review
+                    </span>
+                    <a
+    href="../pages/solution-submission.html?view=solution"
+    class="btn btn-outline"
+>
+    View Details
+</a>
+
+                </div>
+
+            </section>
+
+
+            <!-- My Collaborations -->
+            <section class="dashboard-section"
+                     id="my-collaborations">
+
+                <h2>My Collaborations</h2>
+
+
+                <!-- Collaboration Invitation -->
+                <div class="invitation-item">
+
+                    <div>
+
+                        <h4>Collaboration Invitation</h4>
+
+                        <p>
+                            <strong>Smart Waste Management</strong>
+                        </p>
+
+                        <p>
+                            Government: Government of Jharkhand
+                            <br>
+                            Industry Partner: Tata Consultancy Services
+                        </p>
+
+                    </div>
+
+
+                    <div class="invitation-actions">
+
+                        <button
+                            class="btn btn-primary"
+                            onclick="acceptCollaboration(this)">
+                            Accept
+                        </button>
+
+                        <button
+                            class="btn btn-reject"
+                            onclick="rejectCollaboration(this)">
+                            Reject
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Active Collaboration -->
+                <div class="collaboration-item">
+
+                    <div>
+
+                        <h4>Rural Digital Learning</h4>
+
+                        <p>
+                            Government of Jharkhand +
+                            BIT Mesra +
+                            Tech Solutions India
+                        </p>
+
+                    </div>
+
+                    <span class="status status-active">
+                        Active
+                    </span>
+                    <a
+    href="../pages/collaboration-workspace.html?collaboration=rural-digital-learning"
+    class="btn btn-primary"
+>
+    Open Workspace
+</a>
+
+                </div>
+
+            </section>
+
+
+            <!-- Project Team -->
+            <section class="dashboard-section"
+                     id="project-team">
+
+                <h2>Project Team</h2>
+
+                <div class="team-list">
+
+                    <!-- Student -->
+                    <div class="team-member">
+
+                        <div>
+
+                            <h4>Rahul Kumar</h4>
+
+                            <p>
+                                Computer Science & Engineering
+                            </p>
+
+                        </div>
+
+                        <span class="team-role">
+                            Student
+                        </span>
+
+                    </div>
+
+
+                    <!-- Faculty -->
+                    <div class="team-member">
+
+                        <div>
+
+                            <h4>Dr. Anjali Singh</h4>
+
+                            <p>
+                                Computer Science & Engineering
+                            </p>
+
+                        </div>
+
+                        <span class="team-role">
+                            Faculty Mentor
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Add Team Member -->
+                <div class="add-member-box"
+                     id="add-team-member">
+
+                    <h3>Add Team Member</h3>
+
+                    <form class="team-form"
+                          onsubmit="addTeamMember(event)">
+
+                        <div class="form-group">
+
+                            <label for="memberName">
+                                Name
+                            </label>
+
+                            <input
+                                type="text"
+                                id="memberName"
+                                placeholder="Enter name"
+                                required>
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="memberDepartment">
+                                Department
+                            </label>
+
+                            <input
+                                type="text"
+                                id="memberDepartment"
+                                placeholder="Enter department"
+                                required>
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="memberRole">
+                                Role
+                            </label>
+
+                            <select id="memberRole" required>
+
+                                <option value="">
+                                    Select Role
+                                </option>
+
+                                <option value="Student">
+                                    Student
+                                </option>
+
+                                <option value="Faculty Mentor">
+                                    Faculty Mentor
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <button
+                            type="submit"
+                            class="btn btn-primary">
+                            Add Member
+                        </button>
+
+                    </form>
+
+                </div>
+
+            </section>
+
+        </div>
+
+    </main>
+
+
+    <!-- Footer -->
+    <footer class="footer">
+
+        <div class="container">
+
+            <p>
+                © 2026 Government of Jharkhand |
+                Societal Challenge Platform
+            </p>
+
+        </div>
+
+    </footer>
+
+
+    <script src="../js/main.js"></script>
+
+    <script>
+
+        function acceptCollaboration(button) {
+
+            const invitation =
+                button.closest(".invitation-item");
+
+            invitation.innerHTML = `
+                <div>
+                    <h4>Smart Waste Management</h4>
+
+                    <p>
+                        Government of Jharkhand +
+                        NIT Jamshedpur +
+                        Tata Consultancy Services
+                    </p>
+                </div>
+
+                <span class="status status-active">
+                    Active
+                </span>
+            `;
+
+            alert(
+                "Collaboration accepted successfully."
+            );
+        }
+
+
+        function rejectCollaboration(button) {
+
+            const invitation =
+                button.closest(".invitation-item");
+
+            invitation.remove();
+
+            alert(
+                "Collaboration invitation rejected."
+            );
+        }
+
+
+        function addTeamMember(event) {
+
+            event.preventDefault();
+
+            const name =
+                document.getElementById("memberName").value;
+
+            const department =
+                document.getElementById("memberDepartment").value;
+
+            const role =
+                document.getElementById("memberRole").value;
+
+            const teamList =
+                document.querySelector(".team-list");
+
+            const newMember =
+                document.createElement("div");
+
+            newMember.className = "team-member";
+
+            newMember.innerHTML = `
+                <div>
+                    <h4>${name}</h4>
+                    <p>${department}</p>
+                </div>
+
+                <span class="team-role">
+                    ${role}
+                </span>
+            `;
+
+            teamList.appendChild(newMember);
+
+            alert(
+                name + " has been added to the project team."
+            );
+
+            event.target.reset();
+        }
+
+    </script>
+    <script src="../js/dashboard.js"></script>
+
+</body>
+</html>

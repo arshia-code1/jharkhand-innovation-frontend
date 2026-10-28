@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Submit Solution | Societal Challenge Platform</title>
+
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+    
+    
+       
+</head>
+
+<body>
+
+    <!-- =========================
+         NAVBAR
+    ========================== -->
+
+    <header class="navbar">
+
+        <div class="container navbar-container">
+
+            <a href="../index.html" class="logo">
+                <div class="logo-icon">JH</div>
+                <span>Societal Challenge Platform</span>
+            </a>
+
+            <nav class="nav-links">
+
+                <a href="../index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="challenges.html">Challenges</a>
+                <a href="universities.html">Universities</a>
+                <a href="industries.html">Industries</a>
+                <a href="collaborations.html">Collaborations</a>
+
+            </nav>
+
+            <div class="nav-actions">
+
+                <a href="login.html" class="btn btn-outline">
+                    Login
+                </a>
+
+                <a href="register.html" class="btn btn-primary">
+                    Register
+                </a>
+
+            </div>
+
+            <button class="menu-toggle"
+                    aria-label="Open Menu"
+                    aria-expanded="false">
+                ☰
+            </button>
+
+        </div>
+
+    </header>
+
+
+    <!-- =========================
+         PAGE HEADER
+    ========================== -->
+
+    <section class="page-header">
+
+        <div class="container">
+
+            <h1>Submit a Solution</h1>
+
+            <p>
+                Submit your innovative solution to help solve a societal challenge.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         SOLUTION FORM
+    ========================== -->
+
+    <section class="section">
+
+        <div class="container">
+
+    <div class="card solution-form-card">
+
+    <h2>Solution Submission Form</h2>
+
+                <p class="text-muted form-intro">
+                    Universities and industries can submit their proposed
+                    solutions for approved challenges.
+                </p>
+
+                <br>
+                <div
+    id="solutionDetails"
+    class="card"
+    style="display:none; margin-bottom:30px;"
+>
+
+    <h2>Submitted Solution Details</h2>
+
+    <p>
+        <strong>Challenge:</strong>
+        <span id="detailChallenge"></span>
+    </p>
+
+    <p>
+        <strong>Solution Title:</strong>
+        <span id="detailSolutionTitle"></span>
+    </p>
+
+    <p>
+        <strong>Solution Description:</strong>
+        <span id="detailSolutionDescription"></span>
+    </p>
+
+    <p>
+        <strong>Technology / Approach:</strong>
+        <span id="detailTechnology"></span>
+    </p>
+
+    <p>
+        <strong>Expected Impact:</strong>
+        <span id="detailImpact"></span>
+    </p>
+
+    <p>
+        <strong>Submitted By:</strong>
+        <span id="detailSubmittedBy"></span>
+    </p>
+
+    <p>
+        <strong>Status:</strong>
+        <span id="detailSolutionStatus"></span>
+    </p>
+
+</div>
+
+                <form id="solutionForm">
+
+                    <!-- Challenge -->
+
+                    <div class="form-group">
+
+                        <label for="challenge">
+                            Select Challenge
+                        </label>
+
+                        <select id="challenge" class="form-control" required>
+
+                            <option value="">
+                                Select Challenge
+                            </option>
+
+                            <option value="Smart Waste Management">
+                                Smart Waste Management
+                            </option>
+
+                            <option value="Rural Digital Learning">
+                                Rural Digital Learning
+                            </option>
+
+                            <option value="Rural Healthcare Access">
+                                Rural Healthcare Access
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <!-- Solution Title -->
+
+                    <div class="form-group">
+
+                        <label for="solutionTitle">
+                            Solution Title
+                        </label>
+
+                        <input
+    type="text"
+    id="solutionTitle"
+    class="form-control"
+    placeholder="Enter solution title"
+    required>
+
+                    </div>
+
+
+                    <!-- Proposed Solution -->
+
+                    <div class="form-group">
+
+                        <label for="solutionDescription">
+                            Proposed Solution
+                        </label>
+
+                        <textarea
+    id="solutionDescription"
+    class="form-control"
+    rows="6"
+    placeholder="Describe your proposed solution"
+    required></textarea>
+
+                    </div>
+
+
+                    <!-- Technology / Approach -->
+
+                    <div class="form-group">
+
+                        <label for="technology">
+                            Technology / Approach
+                        </label>
+
+                        <textarea
+    id="technology"
+    class="form-control"
+    rows="4"
+    placeholder="Mention technologies, methods or approach"
+    required></textarea>
+                    </div>
+
+
+                    <!-- Expected Impact -->
+
+                    <div class="form-group">
+
+                        <label for="impact">
+                            Expected Impact
+                        </label>
+
+                        <textarea
+    id="impact"
+    class="form-control"
+    rows="4"
+    placeholder="Describe the expected impact of your solution"
+    required></textarea>
+
+                    </div>
+
+
+                    <!-- Submit -->
+
+                    <button
+                        type="submit"
+                        class="btn btn-primary">
+
+                        Submit Solution
+
+                    </button>
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         FOOTER
+    ========================== -->
+
+    <footer class="footer">
+
+        <div class="container">
+
+            <div class="footer-grid">
+
+                <div>
+
+                    <h3>
+                        Societal Challenge Platform
+                    </h3>
+
+                    <p>
+                        A Government of Jharkhand initiative connecting
+                        citizens, government, universities and industries
+                        to solve societal challenges collaboratively.
+                    </p>
+
+                </div>
+
+
+                <div>
+
+                    <h4>Quick Links</h4>
+
+                    <div class="footer-links">
+
+                        <a href="../index.html">
+                            Home
+                        </a>
+
+                        <a href="about.html">
+                            About
+                        </a>
+
+                        <a href="challenges.html">
+                            Challenges
+                        </a>
+
+                        <a href="universities.html">
+                            Universities
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <div>
+
+                    <h4>Partners</h4>
+
+                    <div class="footer-links">
+
+                        <a href="industries.html">
+                            Industries
+                        </a>
+
+                        <a href="collaborations.html">
+                            Collaborations
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <div>
+
+                    <h4>Important</h4>
+
+                    <div class="footer-links">
+
+                        <a href="#">
+                            Privacy Policy
+                        </a>
+
+                        <a href="#">
+                            Terms & Conditions
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="footer-bottom">
+
+                © 2026 Government of Jharkhand.
+                All Rights Reserved.
+
+            </div>
+
+        </div>
+
+    </footer>
+
+
+    <!-- =========================
+         JAVASCRIPT
+    ========================== -->
+
+    <script src="../js/main.js"></script>
+    <script>
+
+const solutionParams =
+    new URLSearchParams(window.location.search);
+
+if (solutionParams.get("view") === "solution") {
+
+    const savedSolution =
+        JSON.parse(
+            localStorage.getItem("submittedSolution")
+        );
+
+    if (savedSolution) {
+
+        document.getElementById(
+            "solutionDetails"
+        ).style.display = "block";
+
+        document.getElementById(
+            "detailChallenge"
+        ).textContent =
+            savedSolution.challenge;
+
+        document.getElementById(
+            "detailSolutionTitle"
+        ).textContent =
+            savedSolution.solutionTitle;
+
+        document.getElementById(
+            "detailSolutionDescription"
+        ).textContent =
+            savedSolution.solutionDescription;
+
+        document.getElementById(
+            "detailTechnology"
+        ).textContent =
+            savedSolution.technology;
+
+        document.getElementById(
+            "detailImpact"
+        ).textContent =
+            savedSolution.impact;
+
+        document.getElementById(
+            "detailSubmittedBy"
+        ).textContent =
+            savedSolution.submittedBy;
+
+        document.getElementById(
+            "detailSolutionStatus"
+        ).textContent =
+            savedSolution.status;
+
+    }
+
+}
+
+</script>
+    <script>
+    const isLoggedIn = localStorage.getItem("isLoggedIn");
+    const userRole = localStorage.getItem("userRole");
+
+    if (
+        isLoggedIn !== "true" ||
+        (userRole !== "university" && userRole !== "industry")
+    ) {
+        alert("Please login as a University or Industry to submit a solution.");
+        window.location.href = "login.html";
+    }
+</script>
+
+
+    <script>
+
+        document
+            .getElementById("solutionForm")
+            .addEventListener("submit", function(event) {
+
+                event.preventDefault();
+
+                const challenge =
+                    document.getElementById("challenge").value;
+
+                const solutionTitle =
+                    document.getElementById("solutionTitle").value.trim();
+
+                const solutionDescription =
+                    document.getElementById("solutionDescription").value.trim();
+
+                const technology =
+                    document.getElementById("technology").value.trim();
+
+                const impact =
+                    document.getElementById("impact").value.trim();
+
+
+                if (
+                    !challenge ||
+                    !solutionTitle ||
+                    !solutionDescription ||
+                    !technology ||
+                    !impact
+                ) {
+
+                    alert("Please fill all the fields.");
+
+                    return;
+                }
+
+
+                const solutionData = {
+
+    challenge: challenge,
+
+    solutionTitle: solutionTitle,
+
+    solutionDescription: solutionDescription,
+
+    technology: technology,
+
+    impact: impact,
+
+    submittedBy:
+        userRole === "university"
+            ? "University"
+            : "Industry",
+
+    status: "Under Review"
+
+};
+
+
+localStorage.setItem(
+    "submittedSolution",
+    JSON.stringify(solutionData)
+);
+
+
+alert(
+    "Solution submitted successfully!\n\n" +
+    "Challenge: " + challenge +
+    "\nSolution: " + solutionTitle +
+    "\n\nStatus: Under Review"
+);
+
+this.reset();
+
+            });
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,584 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>University Details | Societal Challenge Platform</title>
+
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+
+    <style>
+        .university-details-section {
+            background: #f5f8fc;
+        }
+
+        .university-profile-header {
+            background: #ffffff;
+            border-radius: 16px;
+            padding: 30px;
+            margin-bottom: 25px;
+            display: flex;
+            align-items: center;
+            gap: 25px;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.06);
+        }
+
+        .university-avatar {
+            width: 90px;
+            height: 90px;
+            background: #eaf2ff;
+            color: #0b3d91;
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 30px;
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+
+        .university-profile-header h2 {
+            margin-bottom: 8px;
+            color: #1d2939;
+        }
+
+        .university-location {
+            color: #667085;
+            margin-bottom: 12px;
+        }
+
+        .university-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 25px;
+        }
+
+        .university-detail-card {
+            background: #ffffff;
+            border-radius: 14px;
+            padding: 25px;
+            margin-bottom: 25px;
+            box-shadow: 0 5px 18px rgba(0,0,0,0.05);
+        }
+
+        .university-detail-card h3 {
+            color: #1d2939;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #eaecf0;
+        }
+
+        .university-detail-card p {
+            color: #667085;
+            line-height: 1.7;
+        }
+
+        .expertise-list,
+        .research-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .expertise-tag,
+        .research-tag {
+            padding: 8px 13px;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .expertise-tag {
+            background: #eef4ff;
+            color: #175cd3;
+        }
+
+        .research-tag {
+            background: #ecfdf3;
+            color: #027a48;
+        }
+
+        .basic-info {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .basic-info-item strong {
+            display: block;
+            color: #344054;
+            margin-bottom: 4px;
+        }
+
+        .basic-info-item span {
+            color: #667085;
+            font-size: 14px;
+        }
+
+        .collaboration {
+            padding: 15px;
+            border: 1px solid #eaecf0;
+            border-radius: 10px;
+            margin-bottom: 12px;
+        }
+
+        .collaboration:last-child {
+            margin-bottom: 0;
+        }
+
+        .collaboration h4 {
+            color: #344054;
+            margin-bottom: 6px;
+        }
+
+        .collaboration p {
+            font-size: 14px;
+            margin-bottom: 8px;
+        }
+
+        .collaboration-status {
+            font-size: 12px;
+            font-weight: 700;
+            padding: 5px 9px;
+            border-radius: 12px;
+        }
+
+        .active {
+            background: #ecfdf3;
+            color: #027a48;
+        }
+
+        .completed {
+            background: #f2f4f7;
+            color: #475467;
+        }
+
+        .back-button {
+            display: inline-block;
+            margin-bottom: 20px;
+            color: #175cd3;
+            font-weight: 600;
+            text-decoration: none;
+        }
+
+        .back-button:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 800px) {
+            .university-content {
+                grid-template-columns: 1fr;
+            }
+
+            .university-profile-header {
+                align-items: flex-start;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .university-profile-header {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .university-avatar {
+                margin: auto;
+            }
+
+            .university-detail-card {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+
+    <header class="navbar">
+
+        <div class="container navbar-container">
+
+            <a href="../index.html" class="logo">
+                <span class="logo-icon">JH</span>
+                <span>Societal Challenge Platform</span>
+            </a>
+
+            <button class="menu-toggle" aria-label="Toggle Menu">
+                ☰
+            </button>
+
+            <nav class="nav-links">
+                <a href="../index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="challenges.html">Challenges</a>
+                <a href="universities.html">Universities</a>
+                <a href="industries.html">Industries</a>
+                <a href="collaborations.html">Collaborations</a>
+            </nav>
+
+            <div class="nav-actions">
+                <a href="login.html" class="btn btn-outline">Login</a>
+                <a href="register.html" class="btn btn-primary">Register</a>
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <!-- PAGE HEADER -->
+
+    <section class="page-header">
+
+        <div class="container">
+
+            <h1>University Details</h1>
+
+            <p>
+                Explore the university's expertise and collaboration areas.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- UNIVERSITY DETAILS -->
+
+    <section class="section university-details-section">
+
+        <div class="container">
+
+            <a href="universities.html" class="back-button">
+                ← Back to Universities
+            </a>
+
+
+            <!-- UNIVERSITY BASIC HEADER -->
+
+            <div class="university-profile-header">
+
+                <div class="university-avatar">
+                    NIT
+                </div>
+
+                <div>
+
+                    <h2>
+                        National Institute of Technology Jamshedpur
+                    </h2>
+
+                    <div class="university-location">
+                        📍 Jamshedpur, Jharkhand
+                    </div>
+
+                    <span class="badge badge-primary">
+                        Technical Institution
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div class="university-content">
+
+                <!-- LEFT CONTENT -->
+
+                <div>
+
+                    <!-- ABOUT -->
+
+                    <div class="university-detail-card">
+
+                        <h3>About</h3>
+
+                        <p>
+                            National Institute of Technology Jamshedpur
+                            is a technical institution contributing to
+                            engineering education, research and innovation.
+                        </p>
+
+                        <p>
+                            The university can participate in societal
+                            challenge solving by providing academic
+                            knowledge, research expertise and innovative
+                            solutions.
+                        </p>
+
+                    </div>
+
+
+                    <!-- RESEARCH AREAS -->
+
+                    <div class="university-detail-card">
+
+                        <h3>Research Areas</h3>
+
+                        <div class="research-list">
+
+                            <span class="research-tag">
+                                Artificial Intelligence
+                            </span>
+
+                            <span class="research-tag">
+                                Data Science
+                            </span>
+
+                            <span class="research-tag">
+                                Internet of Things
+                            </span>
+
+                            <span class="research-tag">
+                                Renewable Energy
+                            </span>
+
+                            <span class="research-tag">
+                                Smart Infrastructure
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- EXPERTISE -->
+
+                    <div class="university-detail-card">
+
+                        <h3>Expertise</h3>
+
+                        <div class="expertise-list">
+
+                            <span class="expertise-tag">
+                                Computer Science
+                            </span>
+
+                            <span class="expertise-tag">
+                                Engineering
+                            </span>
+
+                            <span class="expertise-tag">
+                                Technology
+                            </span>
+
+                            <span class="expertise-tag">
+                                Research & Development
+                            </span>
+
+                            <span class="expertise-tag">
+                                Innovation
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- COLLABORATIONS -->
+
+                    <div class="university-detail-card">
+
+                        <h3>Collaborations</h3>
+
+
+                        <div class="collaboration">
+
+                            <h4>
+                                Smart Waste Management
+                            </h4>
+
+                            <p>
+                                Technology-based research collaboration
+                                for improving waste management systems.
+                            </p>
+
+                            <span class="collaboration-status active">
+                                Active
+                            </span>
+
+                        </div>
+
+
+                        <div class="collaboration">
+
+                            <h4>
+                                Rural Digital Learning
+                            </h4>
+
+                            <p>
+                                Collaboration focused on improving digital
+                                learning opportunities for rural students.
+                            </p>
+
+                            <span class="collaboration-status completed">
+                                Completed
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- RIGHT CONTENT -->
+
+                <div>
+
+                    <!-- BASIC INFORMATION -->
+
+                    <div class="university-detail-card">
+
+                        <h3>Basic Information</h3>
+
+                        <div class="basic-info">
+
+                            <div class="basic-info-item">
+
+                                <strong>University Name</strong>
+
+                                <span>
+                                    National Institute of Technology
+                                    Jamshedpur
+                                </span>
+
+                            </div>
+
+
+                            <div class="basic-info-item">
+
+                                <strong>Location</strong>
+
+                                <span>
+                                    Jamshedpur, Jharkhand
+                                </span>
+
+                            </div>
+
+
+                            <div class="basic-info-item">
+
+                                <strong>Institution Type</strong>
+
+                                <span>
+                                    Technical Institution
+                                </span>
+
+                            </div>
+
+
+                            <div class="basic-info-item">
+
+                                <strong>Focus Area</strong>
+
+                                <span>
+                                    Education, Research & Innovation
+                                </span>
+
+                            </div>
+
+
+                            <div class="basic-info-item">
+
+                                <strong>Collaboration With</strong>
+
+                                <span>
+                                    Government & Industry
+                                </span>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- FOOTER -->
+
+    <footer class="footer">
+
+        <div class="container">
+
+            <div class="footer-content">
+
+                <div class="footer-section">
+
+                    <h3>Societal Challenge Platform</h3>
+
+                    <p>
+                        A Government of Jharkhand initiative to connect
+                        societal challenges with innovative solutions.
+                    </p>
+
+                </div>
+
+
+                <div class="footer-section">
+
+                    <h3>Quick Links</h3>
+
+                    <a href="../index.html">Home</a>
+                    <a href="about.html">About</a>
+                    <a href="challenges.html">Challenges</a>
+                    <a href="universities.html">Universities</a>
+                    <a href="industries.html">Industries</a>
+
+                </div>
+
+
+                <div class="footer-section">
+
+                    <h3>Get Involved</h3>
+
+                    <a href="report-problem.html">
+                        Report a Problem
+                    </a>
+
+                    <a href="login.html">
+                        Login
+                    </a>
+
+                    <a href="register.html">
+                        Register
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <div class="footer-bottom">
+
+                <p>
+                    © 2026 Societal Challenge Platform.
+                    Government of Jharkhand.
+                </p>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+
+    <!-- COMMON JS -->
+
+    <script src="../js/main.js"></script>
+
+</body>
+</html>
+

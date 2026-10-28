@@ -1,0 +1,1049 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Report a Problem | Societal Challenge Platform</title>
+
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+
+    <style>
+        /* ================= REPORT PROBLEM PAGE ================= */
+
+        .report-section {
+            background: #f5f8fc;
+        }
+
+        .report-layout {
+            display: grid;
+            grid-template-columns: 0.85fr 1.4fr;
+            gap: 40px;
+            align-items: start;
+        }
+
+        /* LEFT INFORMATION CARD */
+
+        .report-info {
+            background: linear-gradient(145deg, #0b3d91, #1559bd);
+            color: #fff;
+            padding: 40px;
+            border-radius: 18px;
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.10);
+            position: sticky;
+            top: 100px;
+        }
+
+        .report-icon {
+            width: 60px;
+            height: 60px;
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            margin-bottom: 24px;
+        }
+
+        .report-info h2 {
+            color: #fff;
+            font-size: 30px;
+            margin-bottom: 15px;
+        }
+
+        .report-info > p {
+            color: rgba(255, 255, 255, 0.88);
+            line-height: 1.7;
+            margin-bottom: 30px;
+        }
+
+        .report-steps {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .report-step {
+            display: flex;
+            gap: 14px;
+            align-items: flex-start;
+        }
+
+        .step-number {
+            min-width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background: #fff;
+            color: #0b3d91;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+        }
+
+        .report-step h4 {
+            color: #fff;
+            margin-bottom: 4px;
+        }
+
+        .report-step p {
+            color: rgba(255, 255, 255, 0.75);
+            font-size: 14px;
+            line-height: 1.5;
+        }
+
+        /* FORM CARD */
+
+        .report-form-card {
+            background: #fff;
+            padding: 40px;
+            border-radius: 18px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.07);
+        }
+
+        .form-card-header {
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #e6eaf0;
+        }
+
+        .form-card-header h2 {
+            margin-bottom: 8px;
+            color: #1d2939;
+        }
+
+        .form-card-header p {
+            color: #667085;
+            font-size: 15px;
+        }
+
+        .report-form-card .form-group {
+            margin-bottom: 22px;
+        }
+
+        .report-form-card label {
+            display: block;
+            font-weight: 600;
+            color: #344054;
+            margin-bottom: 8px;
+        }
+
+        .required {
+            color: #d92d20;
+        }
+
+        .report-form-card input,
+        .report-form-card select,
+        .report-form-card textarea {
+            width: 100%;
+            padding: 13px 15px;
+            border: 1px solid #d0d5dd;
+            border-radius: 10px;
+            font-family: inherit;
+            font-size: 15px;
+            background: #fff;
+            transition: 0.2s ease;
+        }
+
+        .report-form-card input:focus,
+        .report-form-card select:focus,
+        .report-form-card textarea:focus {
+            outline: none;
+            border-color: #1559bd;
+            box-shadow: 0 0 0 3px rgba(21, 89, 189, 0.10);
+        }
+
+        .report-form-card textarea {
+            resize: vertical;
+            min-height: 130px;
+        }
+
+        .form-help {
+            font-size: 13px;
+            color: #667085;
+            margin-top: 6px;
+        }
+
+        .form-actions {
+            display: flex;
+            gap: 12px;
+            margin-top: 28px;
+            padding-top: 24px;
+            border-top: 1px solid #e6eaf0;
+        }
+
+        .security-note {
+            margin-top: 18px;
+            padding: 13px 15px;
+            background: #f0fdf4;
+            border: 1px solid #bbf7d0;
+            border-radius: 10px;
+            color: #166534;
+            font-size: 13px;
+        }
+
+        /* MOBILE */
+
+        /* ================= AI ANALYSIS ================= */
+
+.ai-analysis-section {
+    margin-top: 30px;
+    padding-top: 25px;
+    border-top: 1px solid #e6eaf0;
+}
+
+.ai-analysis-section h3 {
+    margin-bottom: 15px;
+    color: #1d2939;
+}
+
+.ai-analysis-card {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 20px;
+}
+
+.analysis-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    padding: 13px 0;
+    border-bottom: 1px solid #e6eaf0;
+}
+
+.analysis-row:last-child {
+    border-bottom: none;
+}
+
+.analysis-row strong {
+    color: #344054;
+}
+
+.analysis-row span {
+    color: #667085;
+    text-align: right;
+}
+
+        @media (max-width: 850px) {
+            .report-layout {
+                grid-template-columns: 1fr;
+            }
+
+            .report-info {
+                position: static;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .report-info,
+            .report-form-card {
+                padding: 25px 20px;
+            }
+
+            .report-info h2 {
+                font-size: 25px;
+            }
+
+            .form-actions {
+                flex-direction: column;
+            }
+
+            .form-actions .btn {
+                width: 100%;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ================= NAVBAR ================= -->
+
+    <header class="navbar">
+        <div class="container navbar-container">
+
+            <a href="../index.html" class="logo">
+                <span class="logo-icon">JH</span>
+                <span>Societal Challenge Platform</span>
+            </a>
+
+            <button class="menu-toggle" aria-label="Toggle Menu">
+                ☰
+            </button>
+
+            <nav class="nav-links">
+                <a href="../index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="challenges.html">Challenges</a>
+                <a href="universities.html">Universities</a>
+                <a href="industries.html">Industries</a>
+                <a href="collaborations.html">Collaborations</a>
+            </nav>
+
+            <div class="nav-actions">
+                <a href="login.html" class="btn btn-outline">Login</a>
+                <a href="register.html" class="btn btn-primary">Register</a>
+            </div>
+
+        </div>
+    </header>
+
+
+    <!-- ================= PAGE HEADER ================= -->
+
+    <section class="page-header">
+        <div class="container">
+            <h1>Report a Problem</h1>
+            <p>
+                Share a societal challenge and help create meaningful
+                solutions for communities across Jharkhand.
+            </p>
+        </div>
+    </section>
+
+
+    <!-- ================= REPORT SECTION ================= -->
+
+    <section class="section report-section">
+
+        <div class="container">
+
+            <div class="report-layout">
+
+                <!-- LEFT SIDE -->
+
+                <div class="report-info">
+
+                    <div class="report-icon">
+                        💡
+                    </div>
+
+                    <h2>Your Voice Matters</h2>
+
+                    <p>
+                        Every citizen can help identify problems affecting
+                        their community. Your submission can become an
+                        opportunity for universities and industries to
+                        develop innovative solutions.
+                    </p>
+
+
+                    <div class="report-steps">
+
+                        <div class="report-step">
+                            <div class="step-number">1</div>
+
+                            <div>
+                                <h4>Report</h4>
+                                <p>
+                                    Describe the societal problem
+                                    clearly.
+                                </p>
+                            </div>
+                        </div>
+
+
+                        <div class="report-step">
+                            <div class="step-number">2</div>
+
+                            <div>
+                                <h4>Government Review</h4>
+                                <p>
+                                    The concerned authority reviews
+                                    and verifies the submission.
+                                </p>
+                            </div>
+                        </div>
+
+
+                        <div class="report-step">
+                            <div class="step-number">3</div>
+
+                            <div>
+                                <h4>Challenge Published</h4>
+                                <p>
+                                    Approved problems become public
+                                    challenges.
+                                </p>
+                            </div>
+                        </div>
+
+
+                        <div class="report-step">
+                            <div class="step-number">4</div>
+
+                            <div>
+                                <h4>Solutions & Collaboration</h4>
+                                <p>
+                                    Universities and industries can
+                                    propose innovative solutions.
+                                </p>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- RIGHT SIDE FORM -->
+
+                <div class="report-form-card">
+
+                    <div class="form-card-header">
+
+                        <h2>Submit a Societal Problem</h2>
+
+                        <p>
+                            Please provide clear and accurate information
+                            so that the problem can be properly reviewed.
+                        </p>
+
+                    </div>
+
+
+                    <form id="reportProblemForm">
+
+                        <!-- TITLE -->
+
+                        <div class="form-group">
+
+                            <label for="problemTitle">
+                                Problem Title <span class="required">*</span>
+                            </label>
+
+                            <input
+                                type="text"
+                                id="problemTitle"
+                                name="problemTitle"
+                                placeholder="e.g. Lack of Healthcare Facilities in Rural Areas"
+                                required
+                            >
+
+                            <div class="form-help">
+                                Use a short and meaningful title.
+                            </div>
+
+                        </div>
+
+
+                        <!-- CATEGORY -->
+
+                        <div class="form-group">
+
+                            <label for="category">
+                                Category <span class="required">*</span>
+                            </label>
+
+                            <select id="category" name="category" required>
+
+                                <option value="">
+                                    Select Category
+                                </option>
+
+                                <option value="Healthcare">
+                                    Healthcare
+                                </option>
+
+                                <option value="Education">
+                                    Education
+                                </option>
+
+                                <option value="Environment">
+                                    Environment
+                                </option>
+
+                                <option value="Water & Sanitation">
+                                    Water & Sanitation
+                                </option>
+
+                                <option value="Agriculture">
+                                    Agriculture
+                                </option>
+
+                                <option value="Infrastructure">
+                                    Infrastructure
+                                </option>
+
+                                <option value="Employment & Skill Development">
+                                    Employment & Skill Development
+                                </option>
+
+                                <option value="Rural Development">
+                                    Rural Development
+                                </option>
+
+                                <option value="Social Welfare">
+                                    Social Welfare
+                                </option>
+
+                                <option value="Energy">
+                                    Energy
+                                </option>
+
+                                <option value="Transport">
+                                    Transport
+                                </option>
+
+                                <option value="Digital Governance">
+                                    Digital Governance
+                                </option>
+
+                                <option value="Public Safety">
+                                    Public Safety
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <!-- DISTRICT -->
+
+                        <div class="form-group">
+
+                            <label for="district">
+                                District / Location
+                                <span class="required">*</span>
+                            </label>
+
+                            <input
+                                type="text"
+                                id="district"
+                                name="district"
+                                placeholder="e.g. Ranchi, Jharkhand"
+                                required
+                            >
+
+                        </div>
+
+
+                        <!-- DESCRIPTION -->
+
+                        <div class="form-group">
+
+                            <label for="description">
+                                Problem Description
+                                <span class="required">*</span>
+                            </label>
+
+                            <textarea
+                                id="description"
+                                name="description"
+                                placeholder="Describe the problem, who is affected, and how it impacts the community..."
+                                required
+                            ></textarea>
+
+                            <div class="form-help">
+                                Include useful details about the current situation.
+                            </div>
+
+                        </div>
+
+                        <!-- CURRENT SITUATION -->
+
+<div class="form-group">
+
+    <label for="currentSituation">
+        Current Situation <span class="required">*</span>
+    </label>
+
+    <textarea
+        id="currentSituation"
+        name="currentSituation"
+        placeholder="Describe the current situation in detail..."
+        required
+    ></textarea>
+
+</div>
+
+<!-- REQUIRED SKILLS -->
+
+<div class="form-group">
+
+    <label for="requiredSkills">
+        Required Skills
+    </label>
+
+    <input
+        type="text"
+        id="requiredSkills"
+        name="requiredSkills"
+        placeholder="e.g. Web Development, AI, IoT, Data Analysis"
+    >
+
+</div>
+
+<!-- DEPARTMENT -->
+
+<div class="form-group">
+
+    <label for="department">
+        Department <span class="required">*</span>
+    </label>
+
+    <select
+        id="department"
+        name="department"
+        required
+    >
+
+        <option value="">
+            Select Department
+        </option>
+
+        <option value="Health, Medical Education & Family Welfare">
+            Health, Medical Education & Family Welfare
+        </option>
+
+        <option value="School Education & Literacy">
+            School Education & Literacy
+        </option>
+
+        <option value="Urban Development">
+            Urban Development
+        </option>
+
+        <option value="Rural Development">
+            Rural Development
+        </option>
+
+        <option value="Agriculture">
+            Agriculture
+        </option>
+
+        <option value="Water Resources">
+            Water Resources
+        </option>
+
+        <option value="Energy">
+            Energy
+        </option>
+
+        <option value="Transport">
+            Transport
+        </option>
+
+        <option value="Other">
+            Other
+        </option>
+
+    </select>
+
+</div>
+
+<!-- PROBLEM PRIORITY -->
+
+<div class="form-group">
+
+    <label for="problemPriority">
+        Problem Priority <span class="required">*</span>
+    </label>
+
+    <select
+        id="problemPriority"
+        name="problemPriority"
+        required
+    >
+
+        <option value="">
+            Select Priority
+        </option>
+
+        <option value="High">
+            High
+        </option>
+
+        <option value="Medium">
+            Medium
+        </option>
+
+        <option value="Low">
+            Low
+        </option>
+
+    </select>
+
+</div>
+
+
+                        <!-- EXPECTED OUTCOME -->
+
+                        <div class="form-group">
+
+                            <label for="expectedOutcome">
+                                Expected Outcome
+                                <span class="required">*</span>
+                            </label>
+
+                            <textarea
+                                id="expectedOutcome"
+                                name="expectedOutcome"
+                                placeholder="Describe the improvement or solution you expect..."
+                                required
+                            ></textarea>
+
+                        </div>
+
+                        <!-- SUPPORTING PHOTOS -->
+
+<div class="form-group">
+
+    <label for="supportingPhotos">
+        Supporting Photos
+    </label>
+
+    <input
+        type="file"
+        id="supportingPhotos"
+        name="supportingPhotos"
+        accept="image/*"
+        multiple
+    >
+
+    <div class="form-help">
+        Upload photos that help explain the problem.
+    </div>
+
+</div>
+
+<!-- DOCUMENTS -->
+
+<div class="form-group">
+
+    <label for="documents">
+        Documents
+    </label>
+
+    <input
+        type="file"
+        id="documents"
+        name="documents"
+        accept=".pdf,.doc,.docx,.txt"
+        multiple
+    >
+
+    <div class="form-help">
+        Upload supporting documents related to the problem.
+    </div>
+
+</div>
+
+
+                        <!-- ACTIONS -->
+
+                        <div class="form-actions">
+
+                            <button
+                                type="submit"
+                                class="btn btn-primary"
+                            >
+                                Submit Problem
+                            </button>
+
+                           
+
+                        </div>
+
+
+                        <div class="security-note">
+                            🔒 Your submitted information will be reviewed
+                            by the concerned authority before being published
+                            as a public challenge.
+                        </div>
+
+                        <!-- =========================
+     AI ANALYSIS
+========================== -->
+
+<div class="ai-analysis-section">
+
+    <h3>AI Analysis</h3>
+
+    <div class="ai-analysis-card">
+
+        <div class="analysis-row">
+            <strong>AI Analysis</strong>
+            <span>
+                Problem analysed successfully.
+            </span>
+        </div>
+
+        <div class="analysis-row">
+            <strong>Suggested Category</strong>
+            <span id="suggestedCategory">
+                Healthcare
+            </span>
+        </div>
+
+        <div class="analysis-row">
+            <strong>Confidence Score</strong>
+            <span id="confidenceScore">
+                92%
+            </span>
+        </div>
+
+        <div class="analysis-row">
+            <strong>Similar/Duplicate Challenge Alert</strong>
+            <span>
+                A similar challenge may already exist.
+            </span>
+        </div>
+
+        <div class="analysis-row">
+            <strong>Similarity Percentage</strong>
+            <span id="similarityPercentage">
+                78%
+            </span>
+        </div>
+
+        <div class="analysis-row">
+
+            <strong>Similar Challenge</strong>
+
+            <a
+                href="challenge-details.html?challenge=rural-healthcare"
+                class="btn btn-outline"
+            >
+                View Challenge
+            </a>
+
+        </div>
+
+    </div>
+
+</div>
+                    </form>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer class="footer">
+
+        <div class="container">
+
+            <div class="footer-content">
+
+                <div class="footer-section">
+
+                    <h3>Societal Challenge Platform</h3>
+
+                    <p>
+                        A Government of Jharkhand initiative to connect
+                        societal challenges with innovative solutions.
+                    </p>
+
+                </div>
+
+
+                <div class="footer-section">
+
+                    <h3>Quick Links</h3>
+
+                    <a href="../index.html">Home</a>
+                    <a href="about.html">About</a>
+                    <a href="challenges.html">Challenges</a>
+                    <a href="universities.html">Universities</a>
+                    <a href="industries.html">Industries</a>
+
+                </div>
+
+
+                <div class="footer-section">
+
+                    <h3>Get Involved</h3>
+
+                    <a href="report-problem.html">
+                        Report a Problem
+                    </a>
+
+                    <a href="login.html">
+                        Login
+                    </a>
+
+                    <a href="register.html">
+                        Register
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <div class="footer-bottom">
+
+                <p>
+                    © 2026 Societal Challenge Platform.
+                    Government of Jharkhand.
+                </p>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+
+    <!-- COMMON JS -->
+
+    <script src="../js/main.js"></script>
+
+
+    <!-- REPORT FORM JS -->
+
+    <script>
+    document.addEventListener("DOMContentLoaded", function () {
+
+        const form = document.getElementById("reportProblemForm");
+
+        if (!form) {
+            return;
+        }
+
+        const params = new URLSearchParams(window.location.search);
+        const viewMode = params.get("view");
+
+        if (viewMode === "submitted") {
+
+            const savedProblem =
+                JSON.parse(localStorage.getItem("submittedProblem"));
+
+            if (savedProblem) {
+
+                const detailsBox =
+                    document.createElement("div");
+
+                detailsBox.className = "card";
+                detailsBox.style.marginBottom = "30px";
+
+                detailsBox.innerHTML = `
+                    <h2>Submitted Problem Details</h2>
+
+                    <p><strong>Problem Title:</strong>
+                    ${savedProblem.problemTitle}</p>
+
+                    <p><strong>Category:</strong>
+                    ${savedProblem.category}</p>
+
+                    <p><strong>District / Location:</strong>
+                    ${savedProblem.district}</p>
+
+                    <p><strong>Problem Description:</strong>
+                    ${savedProblem.description}</p>
+
+                    <p><strong>Current Situation:</strong>
+                    ${savedProblem.currentSituation}</p>
+
+                    <p><strong>Expected Outcome:</strong>
+                    ${savedProblem.expectedOutcome}</p>
+
+                    <p><strong>Required Skills:</strong>
+                    ${savedProblem.requiredSkills || "Not provided"}</p>
+
+                    <p><strong>Department:</strong>
+                    ${savedProblem.department}</p>
+
+                    <p><strong>Problem Priority:</strong>
+                    ${savedProblem.problemPriority}</p>
+
+                    <p><strong>Supporting Photos:</strong>
+                    ${savedProblem.photos || "No photos uploaded"}</p>
+
+                    <p><strong>Documents:</strong>
+                    ${savedProblem.documents || "No documents uploaded"}</p>
+                `;
+
+                form.parentElement.insertBefore(
+                    detailsBox,
+                    form
+                );
+
+                form.style.display = "none";
+
+            }
+
+        }
+
+        form.addEventListener("submit", function (event) {
+
+            event.preventDefault();
+
+            const photoFiles =
+                document.getElementById("supportingPhotos").files;
+
+            const documentFiles =
+                document.getElementById("documents").files;
+
+            const problemData = {
+
+                problemTitle:
+                    document.getElementById("problemTitle").value.trim(),
+
+                category:
+                    document.getElementById("category").value,
+
+                district:
+                    document.getElementById("district").value.trim(),
+
+                description:
+                    document.getElementById("description").value.trim(),
+
+                currentSituation:
+                    document.getElementById("currentSituation").value.trim(),
+
+                expectedOutcome:
+                    document.getElementById("expectedOutcome").value.trim(),
+
+                requiredSkills:
+                    document.getElementById("requiredSkills").value.trim(),
+
+                department:
+                    document.getElementById("department").value,
+
+                problemPriority:
+                    document.getElementById("problemPriority").value,
+
+                photos:
+                    Array.from(photoFiles)
+                        .map(file => file.name)
+                        .join(", "),
+
+                documents:
+                    Array.from(documentFiles)
+                        .map(file => file.name)
+                        .join(", ")
+
+            };
+
+            localStorage.setItem(
+                "submittedProblem",
+                JSON.stringify(problemData)
+            );
+
+            alert(
+                "Problem submitted successfully! It is now under government review."
+            );
+
+            form.reset();
+
+        });
+
+    });
+</script>
+
+</body>
+</html>

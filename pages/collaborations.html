@@ -1,0 +1,442 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Collaborations | Societal Challenge Platform</title>
+
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+
+    <style>
+        .collaboration-section {
+            padding: 50px 0;
+        }
+
+        .collaboration-intro {
+            max-width: 750px;
+            margin: 0 auto 40px;
+            text-align: center;
+            color: #666;
+            line-height: 1.7;
+        }
+
+        .collaboration-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+        }
+
+        .collab-card {
+            background: #fff;
+            border-radius: 16px;
+            padding: 28px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.07);
+            transition: 0.3s ease;
+        }
+
+        .collab-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 28px rgba(0, 0, 0, 0.10);
+        }
+
+        .collab-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 15px;
+            margin-bottom: 18px;
+        }
+
+        .collab-card h2 {
+            color: #0b3d91;
+            font-size: 21px;
+            margin-bottom: 8px;
+        }
+
+        .collab-card p {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .status {
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            white-space: nowrap;
+        }
+
+        .status.active {
+            background: #e8f7ee;
+            color: #16803c;
+        }
+
+        .status.completed {
+            background: #eef5ff;
+            color: #0b3d91;
+        }
+
+        .partner-box {
+            background: #f7f9fc;
+            border-radius: 10px;
+            padding: 15px;
+            margin: 18px 0;
+        }
+
+        .partner-box p {
+            margin: 5px 0;
+            color: #444;
+        }
+
+        .partner-box strong {
+            color: #222;
+        }
+
+        .progress-area {
+            margin-top: 20px;
+        }
+
+        .progress-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 8px;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .progress-bar {
+            height: 9px;
+            background: #e5e9ef;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: #0b3d91;
+            border-radius: 10px;
+        }
+
+        @media (max-width: 768px) {
+            .collaboration-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .collab-top {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container nav-container">
+
+            <a href="../index.html" class="logo">
+                Societal Challenge Platform
+            </a>
+
+            <button class="menu-toggle">☰</button>
+
+            <div class="nav-links">
+                <a href="../index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="challenges.html">Challenges</a>
+                <a href="universities.html">Universities</a>
+                <a href="industries.html">Industries</a>
+                <a href="collaborations.html">Collaborations</a>
+
+                <a href="login.html" class="nav-login">Login</a>
+                <a href="register.html" class="btn btn-primary">Register</a>
+            </div>
+
+        </div>
+    </nav>
+
+
+    <!-- Page Header -->
+    <section class="page-header">
+
+        <div class="container">
+
+            <h1>Collaborations</h1>
+
+            <p>
+                Government, universities and industries working together
+                to solve societal challenges.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- Collaborations -->
+    <section class="collaboration-section">
+
+        <div class="container">
+
+            <p class="collaboration-intro">
+                Explore ongoing and completed collaborative projects
+                created through the Societal Challenge Platform.
+            </p>
+
+
+            <div class="collaboration-grid">
+
+                <!-- Collaboration 1 -->
+                <div class="collab-card">
+
+                    <div class="collab-top">
+
+                        <div>
+                            <h2>Smart Waste Management</h2>
+                            <p>Environment</p>
+                        </div>
+
+                        <span class="status active">
+                            Active
+                        </span>
+
+                    </div>
+
+
+                    <div class="partner-box">
+
+                        <p>
+                            <strong>Government:</strong>
+                            Government of Jharkhand
+                        </p>
+
+                        <p>
+                            <strong>University:</strong>
+                            National Institute of Technology Jamshedpur
+                        </p>
+
+                        <p>
+                            <strong>Industry:</strong>
+                            Tata Consultancy Services
+                        </p>
+
+                    </div>
+
+
+                    <div class="progress-area">
+
+                        <div class="progress-header">
+                            <span>Project Progress</span>
+                            <span>65%</span>
+                        </div>
+
+                        <div class="progress-bar">
+                            <div
+                                class="progress-fill"
+                                style="width: 65%;">
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Collaboration 2 -->
+                <div class="collab-card">
+
+                    <div class="collab-top">
+
+                        <div>
+                            <h2>Rural Digital Learning</h2>
+                            <p>Education</p>
+                        </div>
+
+                        <span class="status active">
+                            Active
+                        </span>
+
+                    </div>
+
+
+                    <div class="partner-box">
+
+                        <p>
+                            <strong>Government:</strong>
+                            Government of Jharkhand
+                        </p>
+
+                        <p>
+                            <strong>University:</strong>
+                            Birla Institute of Technology Mesra
+                        </p>
+
+                        <p>
+                            <strong>Industry:</strong>
+                            Tech Solutions India
+                        </p>
+
+                    </div>
+
+
+                    <div class="progress-area">
+
+                        <div class="progress-header">
+                            <span>Project Progress</span>
+                            <span>45%</span>
+                        </div>
+
+                        <div class="progress-bar">
+                            <div
+                                class="progress-fill"
+                                style="width: 45%;">
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Collaboration 3 -->
+                <div class="collab-card">
+
+                    <div class="collab-top">
+
+                        <div>
+                            <h2>Rural Healthcare Access</h2>
+                            <p>Healthcare</p>
+                        </div>
+
+                        <span class="status completed">
+                            Completed
+                        </span>
+
+                    </div>
+
+
+                    <div class="partner-box">
+
+                        <p>
+                            <strong>Government:</strong>
+                            Government of Jharkhand
+                        </p>
+
+                        <p>
+                            <strong>University:</strong>
+                            Ranchi University
+                        </p>
+
+                        <p>
+                            <strong>Industry:</strong>
+                            GreenTech Solutions
+                        </p>
+
+                    </div>
+
+
+                    <div class="progress-area">
+
+                        <div class="progress-header">
+                            <span>Project Progress</span>
+                            <span>100%</span>
+                        </div>
+
+                        <div class="progress-bar">
+                            <div
+                                class="progress-fill"
+                                style="width: 100%;">
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Collaboration 4 -->
+                <div class="collab-card">
+
+                    <div class="collab-top">
+
+                        <div>
+                            <h2>Renewable Energy for Rural Areas</h2>
+                            <p>Energy</p>
+                        </div>
+
+                        <span class="status completed">
+                            Completed
+                        </span>
+
+                    </div>
+
+
+                    <div class="partner-box">
+
+                        <p>
+                            <strong>Government:</strong>
+                            Government of Jharkhand
+                        </p>
+
+                        <p>
+                            <strong>University:</strong>
+                            Central University of Jharkhand
+                        </p>
+
+                        <p>
+                            <strong>Industry:</strong>
+                            GreenTech Solutions
+                        </p>
+
+                    </div>
+
+
+                    <div class="progress-area">
+
+                        <div class="progress-header">
+                            <span>Project Progress</span>
+                            <span>100%</span>
+                        </div>
+
+                        <div class="progress-bar">
+                            <div
+                                class="progress-fill"
+                                style="width: 100%;">
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Footer -->
+    <footer class="footer">
+
+        <div class="container">
+
+            <p>
+                © 2026 Government of Jharkhand. All Rights Reserved.
+            </p>
+
+        </div>
+
+    </footer>
+
+
+    <script src="../js/main.js"></script>
+
+</body>
+</html>
+
